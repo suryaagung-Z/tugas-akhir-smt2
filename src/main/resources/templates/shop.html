@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Didol.shop</title>
+
+    <!-- ICON HEAD -->
+    <link rel="icon" href="/image/icon/logo.svg">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/shop.css">
+    <link rel="stylesheet" href="/css/component.css">
+    <link rel="stylesheet" href="/css/responsive.css">
+    <link rel="stylesheet" href="/css/nouislider.min.css">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="/font/fontawesome/css/all.css">
+
+    <!-- FONT GOOGLE -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans:100,200,300,400,500,600,700,800,900|Montserrat:100,200,300,400,500,600,700,800,900">
+
+
+</head>
+<body>
+
+<div class="s300-">
+    <p>maaf layar anda terlalu kecil</p>
+    <p class="stiker-s300-"></p>
+</div>
+
+<div id="to-top" class="cursor-pointer-custom">
+    <i class="fas fa-chevron-up"></i>
+</div>
+
+<div th:replace="~{components/navbar.html :: navbar}"></div>
+
+<main class="shop">
+    <div class="current-page">
+        <p> <a href="/">home</a> <span class="this-page">/ shop</span></p>
+    </div>
+    <div class="header-shop section-shop">
+        <p class="judul montserrat">Produk</p>
+        <form action="" class="sorting" id="sorting">
+            <select name="" id="sortir" class="josefin">
+                <option value="" selected>Pilih bawaan</option>
+                <option value="">Pilih popularitas</option>
+                <option value="">Pilih terbaru</option>
+                <option value="">Pilih harga rendah ke tinggi</option>
+                <option value="">Pilih harga tinggi ke rendah</option>
+            </select>
+        </form>
+    </div>
+    <div class="content section-shop">
+        <div class="filter-shop" id="filter-shop">
+            <div class="category section-filter">
+                <p class="head-filter montserrat">Kategori <i class="far fa-times-circle cursor-pointer-custom"></i></p>
+                <ul>
+                    <li>
+                        <a href="">Meja</a>
+                        <span class="total">&nbsp;(0)</span>
+                    </li>
+                    <li>
+                        <a href="">Sofa</a>
+                        <span class="total">&nbsp;(0)</span>
+                    </li>
+                    <li>
+                        <a href="">Kasur</a>
+                        <span class="total">&nbsp;(0)</span>
+                    </li>
+                    <li>
+                        <a href="">Kursi</a>
+                        <span class="total">&nbsp;(0)</span>
+                    </li>
+                    <li>
+                        <a href="">Tanaman hias</a>
+                        <span class="total">&nbsp;(0)</span>
+                    </li>
+                    <li>
+                        <a href="">Lampu</a>
+                        <span class="total">&nbsp;(0)</span>
+                    </li>
+                    <li>
+                        <a href="">Lemari</a>
+                        <span class="total">&nbsp;(0)</span>
+                    </li>
+                    <li>
+                        <a href="">Cermin</a>
+                        <span class="total">&nbsp;(0)</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="search-product section-filter">
+                <p class="head-filter montserrat">cari</p>
+                <form action="" id="search-product">
+                    <input type="search" name="" id="src-product" class="josefin" placeholder="Cari produk...">
+                    <button id="submit" class="josefin cursor-pointer-custom">cari</button>
+                </form>
+            </div>
+            <div class="section-filter filter-price">
+                <p class="head-filter montserrat">Filter harga</p>
+                <div id="my-range"></div>
+                <div class="box-count-range">
+                    <button class="josefin cursor-pointer-custom">filter</button>
+                    <span class="range-count">
+                            <span>
+                                Rp&nbsp;<p id="low"></p>
+                            </span>
+                            <i class="fas fa-arrows-alt-v"></i>
+                            <span>
+                                Rp&nbsp;<p id="high"></p>
+                            </span>
+                        </span>
+                </div>
+            </div>
+
+            <div id="btn-filter" class="cursor-pointer-custom">
+                <i class="fas fa-cog"></i>
+                <span>FILTER</span>
+            </div>
+        </div>
+
+        <div class="content-shop">
+            <div class="box-product">
+                <form>
+                    <div class="sell-box-bg">
+                        <a href="">
+                            <img src="/image/product/sofa/sofa-D0001.jpg" class="bg" alt="">
+                        </a>
+                        <div class="to-cart">
+                            <button type="submit" class="cursor-pointer-custom josefin">tambah ke keranjang</button>
+                        </div>
+                    </div>
+                    <div class="text">
+                        <p class="sellCategory">Sofa</p>
+                        <p><span class="sellProduct">Sofa</span> tipe <span class="tipe">(D0001)</span></p>
+                        <p class="sellPrice">Rp 0</p>
+                    </div>
+
+                    <input type="hidden" name="fileName" value="fileName">
+                    <input type="hidden" name="category" value="category">
+                    <input type="hidden" name="productName" value="productName">
+                    <input type="hidden" name="tipe" value="tipe">
+                    <input type="hidden" name="price" value="price">
+                </form>
+            </div>
+            <div class="box-product">
+                <form>
+                    <div class="sell-box-bg">
+                        <a href="">
+                            <img src="/image/product/lemari/lemari-D0002.jpg" class="bg" alt="">
+                        </a>
+                        <div class="to-cart">
+                            <button type="submit" class="cursor-pointer-custom josefin">tambah ke keranjang</button>
+                        </div>
+                    </div>
+                    <div class="text">
+                        <p class="sellCategory">Lemari</p>
+                        <p><span class="sellProduct">Lemari</span> tipe <span class="tipe">(D0002)</span></p>
+                        <p class="sellPrice">Rp 0</p>
+                    </div>
+
+                    <input type="hidden" name="fileName" value="fileName">
+                    <input type="hidden" name="category" value="category">
+                    <input type="hidden" name="productName" value="productName">
+                    <input type="hidden" name="tipe" value="tipe">
+                    <input type="hidden" name="price" value="price">
+                </form>
+            </div>
+            <div class="box-product">
+                <form>
+                    <div class="sell-box-bg">
+                        <a href="">
+                            <img src="/image/product/meja/meja-D0005.jpg" class="bg" alt="">
+                        </a>
+                        <div class="to-cart">
+                            <button type="submit" class="cursor-pointer-custom josefin">tambah ke keranjang</button>
+                        </div>
+                    </div>
+                    <div class="text">
+                        <p class="sellCategory">Meja</p>
+                        <p><span class="sellProduct">Meja</span> tipe <span class="tipe">(D0005)</span></p>
+                        <p class="sellPrice">Rp 0</p>
+                    </div>
+
+                    <input type="hidden" name="fileName" value="fileName">
+                    <input type="hidden" name="category" value="category">
+                    <input type="hidden" name="productName" value="productName">
+                    <input type="hidden" name="tipe" value="tipe">
+                    <input type="hidden" name="price" value="price">
+                </form>
+            </div>
+            <div class="box-product">
+                <form>
+                    <div class="sell-box-bg">
+                        <a href="">
+                            <img src="/image/product/kursi/kursi-D0003.jpg" class="bg" alt="">
+                        </a>
+                        <div class="to-cart">
+                            <button type="submit" class="cursor-pointer-custom josefin">tambah ke keranjang</button>
+                        </div>
+                    </div>
+                    <div class="text">
+                        <p class="sellCategory">Kursi</p>
+                        <p><span class="sellProduct">Kursi</span> tipe <span class="tipe">(D0003)</span></p>
+                        <p class="sellPrice">Rp 0</p>
+                    </div>
+
+                    <input type="hidden" name="fileName" value="fileName">
+                    <input type="hidden" name="category" value="category">
+                    <input type="hidden" name="productName" value="productName">
+                    <input type="hidden" name="tipe" value="tipe">
+                    <input type="hidden" name="price" value="price">
+                </form>
+            </div>
+            <div class="box-product">
+                <form>
+                    <div class="sell-box-bg">
+                        <a href="">
+                            <img src="/image/product/tanaman/echeveria-D0001.jpg" class="bg" alt="">
+                        </a>
+                        <div class="to-cart">
+                            <button type="submit" class="cursor-pointer-custom josefin">tambah ke keranjang</button>
+                        </div>
+                    </div>
+                    <div class="text">
+                        <p class="sellCategory">Tanaman hias</p>
+                        <p><span class="sellProduct">Echeveria</span> tipe <span class="tipe">(D0001)</span></p>
+                        <p class="sellPrice">Rp 0</p>
+                    </div>
+
+                    <input type="hidden" name="fileName" value="fileName">
+                    <input type="hidden" name="category" value="category">
+                    <input type="hidden" name="productName" value="productName">
+                    <input type="hidden" name="tipe" value="tipe">
+                    <input type="hidden" name="price" value="price">
+                </form>
+            </div>
+            <div class="box-product">
+                <form>
+                    <div class="sell-box-bg">
+                        <a href="">
+                            <div class="bg" style="background-image: url(/image/product/lampu/lampu-D0004.jpg);"></div>
+                        </a>
+                        <div class="to-cart">
+                            <button type="submit" class="cursor-pointer-custom josefin">tambah ke keranjang</button>
+                        </div>
+                    </div>
+                    <div class="text">
+                        <p class="sellCategory">Lampu</p>
+                        <p><span class="sellProduct">Lampu</span> tipe <span class="tipe">(D0004)</span></p>
+                        <p class="sellPrice">Rp 0</p>
+                    </div>
+
+                    <input type="hidden" name="fileName" value="fileName">
+                    <input type="hidden" name="category" value="category">
+                    <input type="hidden" name="productName" value="productName">
+                    <input type="hidden" name="tipe" value="tipe">
+                    <input type="hidden" name="price" value="price">
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+
+<div th:replace="~{components/footer.html :: footer}"></div>
+
+<script src="/js/script.js"></script>
+<script src="/js/range/nouislider.min.js"></script>
+<script src="/js/core/shop.js"></script>
+</body>
+</html>
