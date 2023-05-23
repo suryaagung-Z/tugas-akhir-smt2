@@ -1,0 +1,231 @@
+/*---------------------------------------------CONTACT---------------------------------------------*/
+
+/*---------------------------------------------SECTION---------------------------------------------*/
+main.contact .section {
+  margin: 0 60px;
+}
+
+main.contact .section:first-child {
+  padding: 60px 0 30px;
+}
+
+main.contact .section:last-child {
+  padding: 30px 0 60px;
+}
+
+/*---------------------------------------------HEADER---------------------------------------------*/
+
+main.contact .header-contact p,
+main.contact .form p.p-i,
+main.contact .form p.p-2 {
+  text-align: center;
+}
+
+main.contact .header-contact p {
+  margin-bottom: 2rem;
+}
+
+main.contact .header-contact p:first-child {
+  font-size: 3em;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+main.contact .header-contact p:last-child {
+  font-weight: 300;
+  font-style: italic;
+}
+
+/*---------------------------------------------CONTENT---------------------------------------------*/
+main.contact .content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+}
+
+main.contact .form p.p-2,
+main.contact .form p.p-i {
+  margin-bottom: 1rem;
+}
+
+main.contact .form p.p-i {
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+main.contact form {
+  display: flex;
+  flex-direction: column;
+}
+
+main.contact form textarea {
+  resize: none;
+}
+
+main.contact form input:not([type="checkbox"]) {
+  height: 50px;
+}
+
+main.contact form label:not([for="policy"]) {
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+main.contact #btn-form-page-contact {
+  width: -webkit-max-content;
+  width: max-content;
+  color: var(--white);
+  font-weight: 500;
+  background-color: var(--black-bold);
+  letter-spacing: 1px;
+  border: 0;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  padding: 15px 40px;
+  transition: var(--setengah);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+main.contact .btn-form-contact-after {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+main.contact #btn-form-page-contact:hover,
+main.contact .t-btn a:hover {
+  background-color: var(--red);
+}
+
+main.contact form input:not([type="checkbox"]),
+main.contact form textarea {
+  border: 1px solid var(--black01);
+  background-color: var(--white-dark);
+  color: var(--black06);
+  font-size: 1rem;
+  padding: 10px;
+  margin-bottom: 2rem;
+  transition: all var(--setengah);
+}
+
+main.contact form input:not([type="checkbox"]):focus,
+main.contact form textarea:focus {
+  background-color: var(--white);
+  outline: 0;
+  box-shadow: 0 0 5px 2px var(--black01);
+}
+
+main.contact .policy {
+  margin-bottom: 2rem;
+}
+
+main.contact .policy a {
+  color: var(--red);
+}
+
+main.contact .policy input {
+  display: none;
+}
+
+main.contact .policy label {
+  position: relative;
+  display: flex;
+}
+
+main.contact .policy p {
+  margin-left: 10px;
+}
+
+main.contact .policy label::before {
+  content: "";
+  display: block;
+  width: 18px;
+  height: 15px;
+  border: 1px solid var(--black03);
+}
+
+main.contact .policy label::after {
+  content: "\f00c";
+  font-family: "Font Awesome 5 Free";
+  font-size: 1.3rem;
+  font-weight: 800;
+  position: absolute;
+  top: -4px;
+  opacity: 0;
+  transition: var(--setengah);
+}
+
+main.contact .policy input:checked + label::after {
+  opacity: 1 !important;
+}
+
+main.contact .right {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+main.contact .text {
+  text-align: center;
+}
+
+main.contact .form p.p-2,
+main.contact .text p.montserrat {
+  font-size: 2rem;
+  text-transform: capitalize;
+}
+
+main.contact .text p.montserrat {
+  line-height: 140%;
+}
+
+main.contact .text .box-flag {
+  margin: 2rem 0;
+  -webkit-filter: drop-shadow(0 0 10px var(--black03)) contrast(90%);
+  filter: drop-shadow(0 0 10px var(--black03)) contrast(90%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+main.contact .text .flag {
+  width: 500px;
+  height: 300px;
+  margin: 0 0 1rem 0;
+  background-image: linear-gradient(rgb(255, 0, 0) 50%, rgb(255, 255, 255) 50%);
+  -webkit-mask-image: url(../image/bg/mask.png);
+  -webkit-mask-size: 100% 100%;
+  -webkit-mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  mask-image: url(../image/bg/mask.png);
+  mask-size: 100% 100%;
+  mask-position: center;
+  mask-repeat: no-repeat;
+}
+
+main.contact .caption-flag {
+  font-size: 0.8em;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+main.contact .t-btn p {
+  font-weight: 300;
+  text-transform: capitalize;
+}
+
+main.contact .t-btn a {
+  color: var(--white);
+  background-color: var(--black-bold);
+  display: inline-block;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  margin-top: 1rem;
+  transition: var(--setengah);
+}
+
+/*---------------------------------------------a---------------------------------------------*/

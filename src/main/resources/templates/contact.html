@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Didol.shop</title>
+
+  <!-- ICON HEAD -->
+  <link rel="icon" href="/image/icon/logo.svg">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/contact.css">
+  <link rel="stylesheet" href="/css/component.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet" href="/font/fontawesome/css/all.css">
+
+  <!-- FONT GOOGLE -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans:100,200,300,400,500,600,700,800,900|Montserrat:100,200,300,400,500,600,700,800,900">
+
+
+</head>
+<body>
+
+<div class="s300-">
+  <p>maaf layar anda terlalu kecil</p>
+  <p class="stiker-s300-"></p>
+</div>
+
+<div id="to-top" class="cursor-pointer-custom">
+  <i class="fas fa-chevron-up"></i>
+</div>
+
+<div th:replace="~{component/navbar.html :: navbar}"></div>
+
+<main class="contact">
+  <div class="header-contact section">
+    <p class="montserrat">kontak informasi</p>
+    <p>Temukan produk Didol.shop terbaik untuk kenyamanan di rumah anda</p>
+  </div>
+
+  <div class="content section">
+    <div class="form">
+      <p class="p-i">permintaan informasi</p>
+      <p class="montserrat p-2">hubungi kami</p>
+      <form action="">
+        <label for="name">Nama <span class="required">*</span></label>
+        <input class="josefin" type="text" id="name" autocomplete="off">
+
+        <label for="email">Email <span class="required">*</span></label>
+        <input class="josefin" type="text" id="email" autocomplete="off">
+
+        <label for="message">Pesan <span class="required">*</span></label>
+        <textarea class="josefin" name="" id="message" autocomplete="off" rows="10"></textarea>
+
+        <div class="policy">
+          <input type="checkbox" id="policy">
+          <label for="policy">
+            <p>
+              Saya membaca dan menerima <a href="">kebijakan privasi dan pemberitahuan hukum</a>
+            </p>
+          </label>
+        </div>
+
+        <button class="montserrat cursor-pointer-custom" id="btn-form-page-contact">kirim pesan</button>
+      </form>
+    </div>
+
+    <div class="text">
+      <p class="montserrat">furniture indonesia untuk pecinta ruangan elegan</p>
+      <div class="box-flag">
+        <div class="flag"></div>
+        <p class="caption-flag">#didol.shop</p>
+      </div>
+      <div class="t-btn">
+        <p>furniture indonesia untuk pecinta ruangan elegan</p>
+        <a href="">belanja</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<div th:replace="~{component/footer.html :: footer}"></div>
+
+<script src="/js/script.js"></script>
+<script src="/js/core/contact.js"></script>
+</body>
+</html>

@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Didol.shop</title>
+
+    <!-- ICON HEAD -->
+    <link rel="icon" href="/image/icon/logo.svg">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/component.css">
+    <link rel="stylesheet" href="/css/responsive.css">
+    <link rel="stylesheet" href="/css/swiper-bundle.min.css">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="/font/fontawesome/css/all.css">
+
+    <!-- FONT GOOGLE -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans:100,200,300,400,500,600,700,800,900|Montserrat:100,200,300,400,500,600,700,800,900">
+
+
+</head>
+<body>
+
+<div class="s300-">
+    <p>maaf layar anda terlalu kecil</p>
+    <p class="stiker-s300-"></p>
+</div>
+
+<div id="to-top" class="cursor-pointer-custom">
+    <i class="fas fa-chevron-up"></i>
+</div>
+
+<div th:replace="~{component/navbar.html :: navbar}"></div>
+
+<main class="index">
+    <div class="jumbotron" id="jumbotron">
+        <div class="box-text">
+            <h1 class="montserrat">didol.shop</h1>
+            <div class="box-typed">
+                <p class="montserrat">indonesian <span id="my-typing"></span></p>
+            </div>
+            <div class="J-btn">
+                <a href="">Belanja</a>
+                <a href="">Produk terlaris</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+
+        <div class="category section" id="category">
+            <p class="judul montserrat">kategori</p>
+            <div class="content-category">
+                <a href="">
+                    <div>
+                        <img src="/image/category/meja.png" alt="">
+                        <p>Meja <span class="total">(0)</span></p>
+                    </div>
+                </a>
+
+                <a href="">
+                    <div>
+                        <img src="/image/category/sofa.png" alt="">
+                        <p>Sofa <span class="total">(0)</span></p>
+                    </div>
+                </a>
+
+                <a href="">
+                    <div>
+                        <img src="/image/category/kasur.png" alt="">
+                        <p>Kasur <span class="total">(0)</span></p>
+                    </div>
+                </a>
+
+                <a href="">
+                    <div>
+                        <img src="/image/category/kursi.png" alt="">
+                        <p>Kursi <span class="total">(0)</span></p>
+                    </div>
+                </a>
+
+                <a href="">
+                    <div>
+                        <img src="/image/category/tanaman.png" alt="">
+                        <p>Tanaman hias <span class="total">(0)</span></p>
+                    </div>
+                </a>
+
+                <a href="">
+                    <div>
+                        <img src="/image/category/lampu.png" alt="">
+                        <p>Lampu <span class="total">(0)</span></p>
+                    </div>
+                </a>
+
+                <a href="">
+                    <div>
+                        <img src="/image/category/lemari.png" alt="">
+                        <p>Lemari <span class="total">(0)</span></p>
+                    </div>
+                </a>
+
+                <a href="">
+                    <div>
+                        <img src="/image/category/cermin.png" alt="">
+                        <p>Cermin <span class="total">(0)</span></p>
+                    </div>
+                </a>
+            </div>
+        </div> <!-- end category -->
+
+        <div class="best-seller section" id="best-seller">
+            <p class="judul montserrat">penjualan terbaik</p>
+
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <form>
+                            <div id="number">#1</div>
+                            <div class="sell-box-bg">
+                                <a href="">
+                                    <img src="/image/product/sofa/sofa-D0005.jpg" class="bg" alt="">
+                                </a>
+                                <div class="to-cart">
+                                    <button type="submit" class="cursor-pointer-custom josefin">tambah ke keranjang</button>
+                                </div>
+                            </div>
+                            <div class="text">
+                                <p class="sellCategory">Sofa</p>
+                                <p><span class="sellProduct">Sofa</span> tipe <span class="tipe">(D0005)</span></p>
+                                <p>Rp 0</p>
+                            </div>
+
+                            <input type="hidden" name="fileName" value="fileName">
+                            <input type="hidden" name="category" value="category">
+                            <input type="hidden" name="productName" value="productName">
+                            <input type="hidden" name="tipe" value="tipe">
+                            <input type="hidden" name="price" value="price">
+                        </form>
+                    </div>
+                    <div class="swiper-slide">
+                        <form>
+                            <div id="number">#2</div>
+                            <div class="sell-box-bg">
+                                <a href="">
+                                    <img src="/image/product/lemari/lemari-D0002.jpg" class="bg" alt="">
+                                </a>
+                                <div class="to-cart">
+                                    <button type="submit" class="cursor-pointer-custom josefin">tambah ke keranjang</button>
+                                </div>
+                            </div>
+                            <div class="text">
+                                <p class="sellCategory">Lemari</p>
+                                <p><span class="sellProduct">Lemari</span> tipe <span class="tipe">(D0002)</span></p>
+                                <p>Rp 0</p>
+                            </div>
+                        </form>
+
+                        <input type="hidden" name="fileName" value="fileName">
+                        <input type="hidden" name="category" value="category">
+                        <input type="hidden" name="productName" value="productName">
+                        <input type="hidden" name="tipe" value="tipe">
+                        <input type="hidden" name="price" value="price">
+                    </div>
+                    <div class="swiper-slide">
+                        <form>
+                            <div id="number">#3</div>
+                            <div class="sell-box-bg">
+                                <a href="">
+                                    <img src="/image/product/meja/meja-D0005.jpg" alt="">
+                                </a>
+                                <div class="to-cart">
+                                    <button type="submit" class="cursor-pointer-custom josefin">tambah ke keranjang</button>
+                                </div>
+                            </div>
+                            <div class="text">
+                                <p class="sellCategory">Meja</p>
+                                <p><span class="sellProduct">Meja</span> tipe <span class="tipe">(D0005)</span></p>
+                                <p>Rp 0</p>
+                            </div>
+
+                            <input type="hidden" name="fileName" value="fileName">
+                            <input type="hidden" name="category" value="category">
+                            <input type="hidden" name="productName" value="productName">
+                            <input type="hidden" name="tipe" value="tipe">
+                            <input type="hidden" name="price" value="price">
+                        </form>
+                    </div>
+                    <div class="swiper-slide">
+                        <form>
+                            <div id="number">#4</div>
+                            <div class="sell-box-bg">
+                                <a href="">
+                                    <img src="/image/product/kursi/kursi-D0003.jpg" alt="">
+                                </a>
+                                <div class="to-cart">
+                                    <button type="submit" class="cursor-pointer-custom josefin">tambah ke keranjang</button>
+                                </div>
+                            </div>
+                            <div class="text">
+                                <p class="sellCategory">Kursi</p>
+                                <p><span class="sellProduct">Kursi</span> tipe <span class="tipe">(D0003)</span></p>
+                                <p>Rp 0</p>
+                            </div>
+
+                            <input type="hidden" name="fileName" value="fileName">
+                            <input type="hidden" name="category" value="category">
+                            <input type="hidden" name="productName" value="productName">
+                            <input type="hidden" name="tipe" value="tipe">
+                            <input type="hidden" name="price" value="price">
+                        </form>
+                    </div>
+                    <div class="swiper-slide">
+                        <form>
+                            <div id="number">#5</div>
+                            <div class="sell-box-bg">
+                                <a href="">
+                                    <img src="/image/product/tanaman/echeveria-D0001.jpg" alt="">
+                                </a>
+                                <div class="to-cart">
+                                    <button type="submit" class="cursor-pointer-custom josefin">tambah ke keranjang</button>
+                                </div>
+                            </div>
+                            <div class="text">
+                                <p class="sellCategory">Tanaman hias</p>
+                                <p><span class="sellProduct">Echeveria</span> tipe <span class="tipe">(D0001)</span></p>
+                                <p>Rp 0</p>
+                            </div>
+
+                            <input type="hidden" name="fileName" value="fileName">
+                            <input type="hidden" name="category" value="category">
+                            <input type="hidden" name="productName" value="productName">
+                            <input type="hidden" name="tipe" value="tipe">
+                            <input type="hidden" name="price" value="price">
+                        </form>
+                    </div>
+                    <div class="swiper-slide">
+                        <form>
+                            <div id="number">#6</div>
+                            <div class="sell-box-bg">
+                                <a href="">
+                                    <img src="/image/product/lampu/lampu-D0004.jpg" alt="">
+                                </a>
+                                <div class="to-cart">
+                                    <button type="submit" class="cursor-pointer-custom josefin">tambah ke keranjang</button>
+                                </div>
+                            </div>
+                            <div class="text">
+                                <p class="sellCategory">Lampu</p>
+                                <p><span class="sellProduct">Lampu</span> tipe <span class="tipe">(D0004)</span></p>
+                                <p>Rp 0</p>
+                            </div>
+
+                            <input type="hidden" name="fileName" value="fileName">
+                            <input type="hidden" name="category" value="category">
+                            <input type="hidden" name="productName" value="productName">
+                            <input type="hidden" name="tipe" value="tipe">
+                            <input type="hidden" name="price" value="price">
+                        </form>
+                    </div>
+                </div>
+
+                <div class="swiper-button-next swipe"></div>
+                <div class="swiper-button-prev swipe"></div>
+            </div>
+        </div>
+
+        <div class="deskripsi section">
+            <div class="judul montserrat">
+                <p>
+                    kami menciptakan pengalaman baru dengan kualitas produk kami
+                </p>
+            </div>
+            <div class="deskripsi-text">
+                <p>
+                    Desain furniture kita menjadikan kita toko dengan produk kualitas terbaik di indonesia. Apakah Anda ingin tahu rahasia kami? semua produk kualitas terbaik kami dihasil dari tangan para pengrajin handal dan sekarang kami terus mengembangkan desain untuk mendapatkan hasil yang lebih berkualitas. Pengemasan produknya juga sangat rapih, sehingga menghindari kerusakan produk saat pengiriman.
+                </p>
+            </div>
+            <div class="btn-deskripsi">
+                <a href="#who-are-we">siapa kita</a>
+            </div>
+        </div>
+
+        <div class="promo section">
+            <div class="box-imgs">
+                <div class="satu box-img">
+                    <img src="/image/promo/promo1/satu.jpg" alt="">
+                    <div class="text">
+                        <p>produk baru telah tiba</p>
+                        <a href="">lihat</a>
+                    </div>
+                </div>
+                <div class="dua box-img">
+                    <img src="/image/promo/promo1/dua.jpg" alt="">
+                    <div class="text">
+                        <p>produk kuat harga bersahabat</p>
+                        <a href="">lihat</a>
+                    </div>
+                </div>
+                <div class="tiga box-img">
+                    <img src="/image/promo/promo1/tiga.jpg" alt="">
+                    <div class="text">
+                        <p>kualitas tidak terbatas</p>
+                        <a href="">lihat</a>
+                    </div>
+                </div>
+                <div class="empat box-img" id="who-are-we">
+                    <img src="/image/promo/promo1/empat.jpg" alt="">
+                    <div class="text">
+                        <p>buat harimu menyenangkan dengan produk luar biasa kami</p>
+                        <a href="">lihat</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="promo2 section">
+            <div class="judul montserrat">
+                <p>
+                    pendatang baru
+                </p>
+            </div>
+            <div class="content-promo2">
+                <div class="box-content">
+                    <div class="box-img">
+                        <img src="/image/promo/promo2/satu.jpg" id="satu" alt="">
+                    </div>
+                    <div class="text" id="dua">
+                        <p>pendatang baru</p>
+                        <p>Tebaru dari toko kami</p>
+                        <p>Furniture Didol.shop telah menjadi pusat perhatian di indonesia. Terutama di kenaikan presentase penjualan menaik drastis pada tahun 2021. Sekarang furniture terbaik di indonesia tiba langsung ke rumah anda. Temukan produk terbaik kami. Masuk ke toko online kami dan beli produk terbaik</p>
+                        <a href="">lihat</a>
+                    </div>
+                </div>
+                <div class="box-content">
+                    <div class="box-img">
+                        <img src="/image/promo/promo2/dua.jpg" id="satu" alt="">
+                    </div>
+                    <div class="text" id="dua">
+                        <p>pendatang baru</p>
+                        <p>Terbaru dari produsen kami</p>
+                        <p>Bebagai macam furniture memiliki keunikan sendiri karena memiliki bahan kayu. Didol.shop menggunakan kayu kualitas terbaik seperti kayu jati & kayu mahoni. Sudah dipastikan memiliki kualitas kuat, halus, dan tahan lama. Temukan produk terbaik kami. Masuk ke toko online kami dan beli produk terbaik</p>
+                        <a href="">lihat</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div> <!-- end content -->
+</main>
+
+<div class="box-popup" id="box-popup"></div>
+
+<div th:replace="~{component/footer.html :: footer}"></div>
+
+<script src="/js/swiperjs/swiper-bundle.min.js"></script>
+<script src="/js/typed/typed.js"></script>
+<script src="/js/script.js"></script>
+<script src="/js/core/index.js"></script>
+</body>
+</html>

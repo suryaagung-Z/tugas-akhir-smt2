@@ -1,0 +1,834 @@
+@media screen and (max-width: 992px) {
+  /*---------------------------------TO TOP---------------------------------*/
+  #to-top:hover::after {
+    visibility: hidden;
+  }
+
+  /*---------------------------------NAVBAR---------------------------------*/
+  nav .top {
+    display: none;
+  }
+
+  nav svg.s-large {
+    width: 150px;
+  }
+
+  /*---------------------------------BEST SELLER---------------------------------*/
+  main.index .swiper-slide .to-cart button,
+  main.shop .box-product .to-cart button {
+    transform: translateY(0);
+  }
+
+  /*---------------------------------DESKRIPSI---------------------------------*/
+  main.index .deskripsi {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /*---------------------------------PROMO---------------------------------*/
+  .promo .text p {
+    font-size: 1.5rem;
+  }
+
+  /*---------------------------------FOOTER---------------------------------*/
+  footer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /*---------------------------------[===HALAMAN CONTACT===]---------------------------------*/
+  /*~~~~~~~~~~~~~~~~~~~MAIN~~~~~~~~~~~~~~~~~~~*/
+  main.contact .content {
+    grid-template-columns: 1fr;
+  }
+
+  /*---------------------------------[===HALAMAN SHOP===]---------------------------------*/
+  /*~~~~~~~~~~~~~~~~~~~BOX CONTENT~~~~~~~~~~~~~~~~~~~*/
+  main.shop .content {
+    grid-template-columns: 1fr;
+  }
+
+  /*~~~~~~~~~~~~~~~~~~~FILTER~~~~~~~~~~~~~~~~~~~*/
+  main.shop #btn-filter {
+    display: block;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    left: 20px;
+    background-image: linear-gradient(#666666, var(--black));
+    color: var(--white);
+    box-shadow: 0 0 5px 2px var(--black03);
+    border-radius: 10px 10px 0 0;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    transition: var(--setengah);
+  }
+
+  main.shop .hide-btn-filter {
+    bottom: -100% !important;
+  }
+
+  main.shop .filter-shop {
+    height: 100%;
+    position: fixed;
+    padding: 0 20px 20px 20px;
+    left: 0;
+    right: 0;
+    bottom: -100%;
+    background-color: var(--white-body);
+    transition: var(--setengah) ease-out;
+    overflow-y: scroll;
+    z-index: 99;
+  }
+
+  main.shop .show-filter-shop {
+    bottom: 0 !important;
+  }
+
+  main.shop .filter-shop::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  main.shop .filter-shop::-webkit-scrollbar-track {
+    box-shadow: none;
+  }
+
+  main.shop .head-filter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  main.shop .head-filter i {
+    display: block;
+  }
+  /*~~~~~~~~~~~~~~~~~~~HEAD~~~~~~~~~~~~~~~~~~~*/
+
+  main.shop .header-shop .judul {
+    margin-bottom: 20px;
+  }
+
+  /*~~~~~~~~~~~~~~~~~~~FILTER-SEARCH~~~~~~~~~~~~~~~~~~~*/
+  main.shop .search-product form#search-product {
+    grid-template-columns: 4fr 1fr;
+  }
+
+  main.shop .search-product #submit {
+    padding: 0 20px;
+  }
+
+  /*---------------------------------[===HALAMAN DETAIL PRODUCT===]---------------------------------*/
+  main.detail-product .left .box-img p {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  main.detail-product .right .methods {
+    justify-content: space-between;
+    flex-direction: column;
+  }
+
+  /*~~~~~~~~~~~~~~~~~~~DESCRIPTION AND REVIEWS~~~~~~~~~~~~~~~~~~~*/
+  main.detail-product .descAndRev {
+    grid-template-columns: 1fr;
+  }
+
+  main.detail-product .descAndRev form {
+    width: 80%;
+  }
+
+  /*---------------------------------[===HALAMAN CART===]---------------------------------*/
+  main.cart .content {
+    padding: 60px;
+  }
+
+  main.cart .head {
+    text-transform: capitalize;
+  }
+
+  /*~~~~~~~~~~~~~~~~~~~CART~~~~~~~~~~~~~~~~~~~*/
+  main.cart .top table,
+  th,
+  td {
+    padding: 20px 0;
+    border: 0;
+  }
+
+  main.cart .top .product .cross a {
+    margin: 0;
+  }
+
+  main.cart .top .product .img-tbl a {
+    margin: 0 0 0 auto;
+  }
+
+  main.cart .top .product a:nth-child(2) {
+    margin: 0 0 0 auto;
+  }
+
+  main.cart .top table {
+    border-bottom: 1px solid var(--black01);
+  }
+
+  main.cart .top table td.productName {
+    width: 100%;
+  }
+
+  main.cart .top .cross {
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  main.cart .top tr.product {
+    padding: 20px 0;
+    display: grid;
+    grid-template-areas:
+      "satu dua"
+      "tiga tiga"
+      "empat empat"
+      "lima lima"
+      "enam enam";
+    border-top: 1px solid var(--black01);
+  }
+
+  main.cart .top tr.product:first-child {
+    border-bottom: 0;
+  }
+
+  main.cart .top table td {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  main.cart .top .product td:nth-child(1) {
+    grid-area: satu;
+  }
+
+  main.cart .top .product td:nth-child(2) {
+    grid-area: dua;
+  }
+
+  main.cart .top .product td:nth-child(3) {
+    grid-area: tiga;
+  }
+
+  main.cart .top .product td:nth-child(4) {
+    grid-area: empat;
+  }
+
+  main.cart .top .product td:nth-child(5) {
+    grid-area: lima;
+  }
+
+  main.cart .top .product td:nth-child(6) {
+    grid-area: enam;
+  }
+
+  main.cart .top .head-table {
+    display: none;
+  }
+
+  main.cart .top .mobile {
+    display: flex;
+    align-items: center;
+  }
+
+  main.cart .top .custom-number {
+    margin: 0 0 0 auto;
+  }
+
+  /*---------------------------------[===HALAMAN CHECKOUT===]---------------------------------*/
+  /*~~~~~~~~~~~~~~~~~~~SLIDE 1~~~~~~~~~~~~~~~~~~~*/
+  main.checkout .sharing-box1 {
+    grid-template-columns: 1fr;
+  }
+
+  main.checkout .btn-next-prev #myprevnext {
+    background-color: var(--black) !important;
+  }
+
+  main.checkout .btn-next-prev #myprevnext:nth-child(1) {
+    clip-path: polygon(15% 0, 100% 0%, 100% 100%, 15% 100%, 0% 50%);
+  }
+
+  main.checkout .btn-next-prev #myprevnext:nth-child(2) {
+    clip-path: polygon(0 0, 85% 0, 100% 50%, 85% 100%, 0 100%);
+  }
+
+  main.checkout .btn-next-prev #myprevnext:nth-child(1) span {
+    transform: translateX(5px);
+  }
+
+  main.checkout .btn-next-prev #myprevnext:nth-child(2) span {
+    transform: translateX(-5px);
+  }
+
+  /*~~~~~~~~~~~~~~~~~~~SLIDE 2~~~~~~~~~~~~~~~~~~~*/
+  main.checkout .sharing-box2,
+  main.checkout .sharing-box3 .instant,
+  main.checkout .sharing-box3 .regular {
+    grid-template-columns: 1fr;
+  }
+
+  main.checkout .left2 img,
+  main.checkout .sharing-box3 .instant img,
+  main.checkout .sharing-box3 .regular img {
+    width: 50%;
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  /*---------------------------------NAVBAR---------------------------------*/
+  /* JS */
+  .dropdown-hover {
+    display: block;
+  }
+  /* END JS */
+  nav .btn-in-dropdown {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  /*---------------------------------ALL---------------------------------*/
+  .judul {
+    font-size: 2rem;
+  }
+
+  /*---------------------------------POPUP---------------------------------*/
+  .popup {
+    width: calc(100% - 40px);
+  }
+
+  /*---------------------------------IF NOT CONTENT---------------------------------*/
+  main.cart .ifNotContent #anim-no-product {
+    width: 50%;
+  }
+
+  main.cart .ifNotContent p {
+    font-size: 1.5rem;
+  }
+
+  /*---------------------------------NAVBAR---------------------------------*/
+  nav .bottom {
+    padding: 0;
+    grid-template-columns: auto 1fr 1fr 1fr;
+  }
+
+  nav #hamburger {
+    display: block;
+    margin: 1rem 0 1rem 1rem;
+    cursor: pointer;
+  }
+
+  nav #hamburger span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background-color: var(--black);
+    margin: 5px;
+  }
+
+  nav .bottom .navbar {
+    padding: 1em 0;
+    background-color: var(--white);
+    display: none;
+    justify-content: start;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  nav .bottom .navbar-toggle {
+    display: block;
+    box-shadow: 0 5px 5px var(--black01);
+  }
+
+  nav .bottom .navbar #link {
+    margin: 0 1.5rem;
+    padding: 1.4em 0;
+    border-bottom: 1px solid var(--black01);
+  }
+
+  .dropdown {
+    padding: 1.5rem 0;
+    margin: 0 1.5rem;
+    border-bottom: 1px solid var(--black01);
+    position: static;
+    box-shadow: none;
+  }
+
+  .box-dropdown {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* JS */
+  .dropdown-click {
+    display: block;
+  }
+  /* END JS */
+
+  nav .btn-in-dropdown {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  nav .btn-in-dropdown #link {
+    margin: 1.4em 1.8em !important;
+    padding: 0 !important;
+  }
+
+  nav .btn-in-dropdown a {
+    border: 0 !important;
+    flex-grow: 1;
+  }
+
+  nav .btn-in-dropdown p {
+    flex-grow: 1;
+    padding: 1rem;
+    text-align: center;
+    border: 1px solid var(--black-bold);
+    transition: var(--setengah);
+  }
+
+  nav .btn-in-dropdown #link:first-child p {
+    color: var(--white);
+    background-color: var(--black-bold);
+  }
+
+  nav .btn-in-dropdown #link:first-child p:hover {
+    color: var(--white);
+    background-color: var(--red);
+    border: 1px solid var(--red);
+  }
+
+  nav .btn-in-dropdown #link:last-child p {
+    background-color: transparent;
+    border: 1px solid var(--black);
+  }
+
+  nav .btn-in-dropdown #link:last-child p:hover {
+    color: var(--white);
+    background-color: var(--black);
+  }
+
+  nav .bottom .icon {
+    margin: 0 1.3em 0 0;
+    grid-column-start: 4;
+    grid-column-end: 5;
+  }
+
+  /*---------------------------------JUMBOTRON---------------------------------*/
+  .jumbotron h1 {
+    font-size: 3rem;
+  }
+
+  .jumbotron p {
+    font-size: 1.5rem;
+  }
+
+  /*---------------------------------CATEGORY---------------------------------*/
+  main.index .category .content-category {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /*---------------------------------DESKRIPSI---------------------------------*/
+  main.index .deskripsi {
+    grid-template-columns: 1fr;
+  }
+
+  /*---------------------------------PROMO---------------------------------*/
+  .promo .box-imgs {
+    grid-template-areas:
+      "satu"
+      "dua"
+      "tiga"
+      "empat";
+  }
+
+  .promo .text a {
+    font-size: 0.8rem;
+  }
+
+  .promo .empat a {
+    padding: 10px 30px;
+  }
+
+  /*---------------------------------PROMO2---------------------------------*/
+  .promo2 .box-content {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "satu"
+      "dua" !important;
+  }
+
+  /*---------------------------------FOOTER---------------------------------*/
+  footer .footer1 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /*---------------------------------[===HALAMAN AUTH===]---------------------------------*/
+  main.auth .box-form {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  /*---------------------------------[===HALAMAN SHOP===]---------------------------------*/
+  /*~~~~~~~~~~~~~~~~~~~CONTENT SHOP~~~~~~~~~~~~~~~~~~~*/
+  main.shop .content-shop {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /*---------------------------------[===HALAMAN ACCOUNT===]---------------------------------*/
+  /*~~~~~~~~~~~~~~~~~~~DATA~~~~~~~~~~~~~~~~~~~*/
+  main.account .optional form {
+    grid-template-areas: "child1" "child2" "child3" "child4" "child5" "child6" "child7";
+  }
+
+  /*---------------------------------[===HALAMAN DETAIL PRODUCT===]---------------------------------*/
+  main.detail-product .box-add-cart {
+    grid-template-columns: 1fr;
+  }
+
+  /*---------------------------------[===HALAMAN CART===]---------------------------------*/
+  /*~~~~~~~~~~~~~~~~~~~BOTTOM~~~~~~~~~~~~~~~~~~~*/
+  main.cart .bottom .box-right {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  /*---------------------------------ALL---------------------------------*/
+  .judul,
+  main.checkout .box-checkout .judul {
+    font-size: 1.5rem;
+  }
+
+  .sell-box-bg {
+    height: 200px;
+  }
+
+  /*---------------------------------POPUP CHECK---------------------------------*/
+  .box-popup-chck .popup-chck {
+    width: 100%;
+    margin: 0 20px;
+  }
+
+  /*---------------------------------NAVBAR---------------------------------*/
+  nav span.count-product {
+    display: none;
+  }
+
+  nav .logo a {
+    gap: 5px;
+  }
+
+  nav .bottom .icon a:first-child {
+    margin-right: 0;
+  }
+
+  .box-dropdown {
+    grid-template-columns: 1fr;
+  }
+
+  nav .btn-in-dropdown {
+    grid-template-columns: 1fr;
+  }
+
+  nav .btn-in-dropdown #link {
+    margin-bottom: 0 !important;
+  }
+
+  /*---------------------------------JUMBOTRON---------------------------------*/
+  .jumbotron h1 {
+    font-size: 2.5rem;
+  }
+
+  .jumbotron p {
+    font-size: 1rem;
+  }
+
+  .jumbotron .J-btn {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .jumbotron a {
+    padding: 10px 0;
+  }
+
+  /*---------------------------------CATEGORY---------------------------------*/
+  main.index .category .content-category {
+    grid-template-columns: 1fr;
+  }
+  /*---------------------------------BEST SELLER---------------------------------*/
+  main.index .best-seller .swipe {
+    display: none;
+  }
+
+  main.index .best-seller .swiper-button-next {
+    right: 20px;
+  }
+
+  main.index .best-seller .swiper-button-prev {
+    left: 20px;
+  }
+
+  main.index .swiper-slide .to-cart button,
+  main.shop .box-product .to-cart button {
+    line-height: 120%;
+  }
+
+  /*---------------------------------PROMO---------------------------------*/
+  .promo .box-imgs {
+    grid-template-areas:
+      "satu"
+      "dua"
+      "tiga"
+      "empat";
+  }
+
+  .promo .text p {
+    width: 80%;
+    font-size: 1rem;
+  }
+
+  .promo .empat a {
+    padding: 10px 20px;
+  }
+
+  .promo .box-img:hover p,
+  .promo .box-img:hover a {
+    transform: translateY(0);
+  }
+
+  /*---------------------------------PROMO2---------------------------------*/
+  .promo2 .text {
+    padding: 50px 0;
+  }
+
+  /*---------------------------------FOOTER---------------------------------*/
+  footer .footer1 {
+    grid-template-columns: 1fr;
+  }
+
+  /*---------------------------------[===HALAMAN CONTACT===]---------------------------------*/
+  /*~~~~~~~~~~~~~~~~~~~MAIN~~~~~~~~~~~~~~~~~~~*/
+  main.contact .section {
+    margin: 0 20px;
+  }
+
+  main.contact .text .flag {
+    width: 300px;
+  }
+
+  main.contact .form p.p-2,
+  main.contact .text p.montserrat {
+    font-size: 1.5rem;
+  }
+
+  /*---------------------------------[===HALAMAN AUTH===]---------------------------------*/
+  /*~~~~~~~~~~~~~~~~~~~JUMBOTRON~~~~~~~~~~~~~~~~~~~*/
+  main.auth .header p {
+    font-size: 2.5rem;
+  }
+
+  /*~~~~~~~~~~~~~~~~~~~CONTENT~~~~~~~~~~~~~~~~~~~*/
+  main.auth .section {
+    padding: 60px 20px;
+  }
+
+  main.auth .box-form {
+    padding: 0;
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  main.auth input {
+    border: 1px solid var(--black01);
+  }
+
+  /*---------------------------------[===HALAMAN SHOP===]---------------------------------*/
+  /*~~~~~~~~~~~~~~~~~~~CONTENT SHOP~~~~~~~~~~~~~~~~~~~*/
+  main.shop .content-shop .box-bg {
+    height: 200px;
+  }
+
+  /*~~~~~~~~~~~~~~~~~~~HEAD~~~~~~~~~~~~~~~~~~~*/
+  main.shop .header-shop {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  /*---------------------------------[===HALAMAN ACCOUNT===]---------------------------------*/
+  /*~~~~~~~~~~~~~~~~~~~SECTION~~~~~~~~~~~~~~~~~~~*/
+  main.account .section {
+    padding: 60px 20px;
+  }
+
+  /*~~~~~~~~~~~~~~~~~~~BOX ACCOUNT~~~~~~~~~~~~~~~~~~~*/
+  main.account .box-account {
+    padding: 0;
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  /*~~~~~~~~~~~~~~~~~~~DATA~~~~~~~~~~~~~~~~~~~*/
+  main.account .optional form {
+    grid-template-areas: "child1" "child2" "child3" "child4" "child5" "child6" "child7";
+  }
+
+  main.account .setting .remove-account p {
+    width: 100%;
+  }
+
+  /*---------------------------------[===HALAMAN DETAIL PRODUCT===]---------------------------------*/
+  main.detail-product .right .price {
+    grid-area: 1 / 1 / 2 / 2;
+  }
+
+  main.detail-product .right .custom-number {
+    grid-area: 1 / 2 / 2 / 3;
+  }
+
+  main.detail-product .right form button {
+    grid-area: 2 / 1 / 3 / 3;
+  }
+
+  main.detail-product .left .target-vw img {
+    object-fit: cover;
+    width: 100%;
+  }
+
+  main.detail-product .descAndRev form {
+    grid-template-areas:
+      "stars"
+      "mess"
+      "name"
+      "email"
+      "btn-rev";
+  }
+
+  /*~~~~~~~~~~~~~~~~~~~DESCRIPTION AND REVIEWS~~~~~~~~~~~~~~~~~~~*/
+  main.detail-product .descAndRev form {
+    width: 100%;
+  }
+
+  /*---------------------------------[===HALAMAN CART===]---------------------------------*/
+  main.cart .content {
+    padding: 60px 20px;
+  }
+
+  /*---------------------------------[===HALAMAN CHECKOUT===]---------------------------------*/
+  /*~~~~~~~~~~~~~~~~~~~SECTION~~~~~~~~~~~~~~~~~~~*/
+  main.checkout .section {
+    padding: 0;
+  }
+
+  /*~~~~~~~~~~~~~~~~~~~BOX CHECKOUT~~~~~~~~~~~~~~~~~~~*/
+  main.checkout .box-checkout {
+    padding: 60px 20px;
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  main.checkout .sharing-box1 {
+    padding: 0;
+  }
+
+  main.checkout .box-checkout .judul-check {
+    font-size: 1.5rem;
+  }
+
+  main.checkout .box-checkout .head-form-check {
+    font-size: 1rem;
+  }
+
+  main.checkout .sharing-box1 .form1 .name {
+    grid-area: 1 / 1 / 2 / 5;
+  }
+
+  main.checkout .sharing-box1 .form1 .country {
+    grid-area: 2 / 1 / 3 / 5;
+  }
+
+  main.checkout .sharing-box1 .form1 .city {
+    grid-area: 3 / 1 / 4 / 5;
+  }
+
+  main.checkout .sharing-box1 .form1 .double {
+    grid-area: 4 / 1 / 5 / 5;
+  }
+
+  main.checkout .sharing-box1 .form1 .postcode {
+    grid-area: 5 / 1 / 6 / 5;
+  }
+
+  main.checkout .sharing-box1 .form1 .phone {
+    grid-area: 6 / 1 / 7 / 5;
+  }
+
+  main.checkout .sharing-box1 .form1 .email {
+    grid-area: 7 / 1 / 8 / 5;
+  }
+
+  /*---------------------------------[===HALAMAN CHECKOUT===]---------------------------------*/
+  /*~~~~~~~~~~~~~~~~~~~SLIDE 2~~~~~~~~~~~~~~~~~~~*/
+  main.checkout .left2 img,
+  main.checkout .sharing-box3 .default img,
+  main.checkout .sharing-box3 .instant img,
+  main.checkout .sharing-box3 .regular img {
+    width: 80%;
+  }
+}
+
+/*---------------------------------------------DIE---------------------------------------------*/
+@media screen and (max-width: 300px) {
+  body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #to-top,
+  nav,
+  main,
+  footer {
+    display: none;
+  }
+
+  .s300- {
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 0 20px;
+    display: block;
+  }
+
+  .stiker-s300-::after {
+    content: "";
+    animation-name: stiker-s300-;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes stiker-s300- {
+    0% {
+      content: "🙁";
+    }
+    30% {
+      content: "🙁";
+    }
+    50% {
+      content: "😢";
+    }
+    100% {
+      content: "😭";
+    }
+  }
+}

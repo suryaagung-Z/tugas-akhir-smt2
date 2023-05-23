@@ -1,0 +1,187 @@
+/*---------------------------------------------ICON LOGO---------------------------------------------*/
+nav svg {
+  width: 40px;
+  height: auto;
+}
+
+svg .logo {
+  fill-rule: evenodd;
+}
+/*---------------------------------------------TO TOP---------------------------------------------*/
+#to-top {
+  background-color: var(--black-bold);
+  color: var(--white);
+  padding: 10px 12px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  transform: translateX(200%);
+  display: flex;
+  justify-content: center;
+  transition: 0.2s;
+  z-index: 100;
+}
+
+/* JS */
+.to-top-show {
+  transform: translateX(0) !important;
+}
+/* END */
+
+#to-top:hover {
+  background-color: var(--red);
+}
+
+/*---------------------------------------------SLIDER---------------------------------------------*/
+
+.swiper {
+  width: 100%;
+  height: auto;
+}
+
+.best-seller .swipe {
+  transition: var(--setengah);
+  opacity: 0;
+}
+
+.best-seller .swiper-button-next {
+  right: -30px;
+}
+
+.best-seller .swiper-button-prev {
+  left: -30px;
+}
+
+.best-seller .swiper:hover .swiper-button-next {
+  right: 20px;
+  opacity: 1;
+}
+
+.best-seller .swiper:hover .swiper-button-prev {
+  left: 20px;
+  opacity: 1;
+}
+
+/*---------------------------------------------POPUP---------------------------------------------*/
+.box-popup {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 100;
+}
+
+.popup {
+  width: 50%;
+  padding: 10px 40px;
+  margin: 20px 20px 0 20px;
+  text-align: center;
+  font-size: 1.2rem;
+  line-height: 120%;
+  color: var(--white);
+  background-color: rgb(26, 191, 114);
+  box-shadow: 0 0 10px 5px var(--black01);
+  animation-name: popup;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  position: relative;
+}
+
+@keyframes popup {
+  0% {
+    right: -20px;
+    opacity: 0;
+  }
+  50% {
+    right: 20px;
+  }
+  100% {
+    right: 0px;
+    opacity: 1;
+  }
+}
+
+/*---------------------------------------------POPUP CHECK---------------------------------------------*/
+.box-popup-chck {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: var(--black04);
+  z-index: 100;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.box-popup-chck-enable {
+  visibility: visible;
+  opacity: 1;
+  transition: var(--setengah);
+}
+
+.box-popup-chck .popup-chck {
+  width: 400px;
+  border-radius: 3px;
+  background-color: var(--white-dark);
+  box-shadow: 0 0 10px 2px var(--black03);
+  transform: scale(0.5);
+}
+
+.box-popup-chck .popup-chck-enable {
+  transform: scale(1);
+  transition: var(--setengah);
+}
+
+.box-popup-chck .each {
+  padding: 10px;
+}
+
+.box-popup-chck .each:first-child {
+  border-bottom: 1px solid var(--black01);
+}
+
+.box-popup-chck .each:last-child {
+  border-top: 1px solid var(--black01);
+}
+
+.box-popup-chck .head {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.box-popup-chck .text {
+  padding: 20px 10px;
+  line-height: 120%;
+}
+
+.box-popup-chck .btn-pc {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.box-popup-chck button {
+  padding: 10px 20px;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  border-radius: 3px;
+  border: 1px solid var(--black01);
+  color: var(--white);
+  background-color: var(--gray);
+}
+
+.box-popup-chck button:last-child {
+  background-color: var(--red);
+}

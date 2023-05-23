@@ -1,0 +1,300 @@
+main.account {
+  font-family: var(--montserrat);
+}
+/*---------------------------------------------HEADER---------------------------------------------*/
+main.account .header {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main.account .header img {
+  width: 100%;
+  height: 150%;
+  object-fit: cover;
+  position: relative;
+  top: 0;
+}
+
+main.account .header .text {
+  width: 100%;
+  height: 100%;
+  background-color: var(--black04);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+}
+
+main.account .header p {
+  color: var(--white);
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+/*---------------------------------------------SECTION---------------------------------------------*/
+main.account .section {
+  padding: 60px 40px;
+}
+
+/*---------------------------------------------PROFILE IMAGE---------------------------------------------*/
+main.account .profile-image {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+main.account .profile-image .box-img,
+main.account .profile-image .img,
+main.account .profile-image .box-img a {
+  border-radius: 50%;
+  position: relative;
+}
+
+main.account .profile-image .box-img a {
+  color: var(--white);
+  background-color: var(--black);
+  padding: 8px 10px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 99;
+}
+
+main.account .profile-image .img {
+  border: 1px solid var(--black);
+  overflow: hidden;
+  position: relative;
+}
+
+/*---------------------------------------------BOX ACCOUNT---------------------------------------------*/
+main.account .box-account {
+  height: -webkit-max-content;
+  height: max-content;
+  padding: 60px 40px;
+  background-color: var(--white);
+  box-shadow: 0 0 10px 1px var(--black01);
+  position: relative;
+}
+
+main.account .move-hide {
+  display: none !important;
+}
+
+main.account .head-form {
+  margin-top: 3rem;
+  font-weight: 700;
+}
+
+main.account .hf2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+main.account .hf2 #info {
+  position: relative;
+  transition: var(--setengah);
+}
+
+main.account .hf2 #info:hover {
+  color: var(--red);
+}
+
+main.account .hf2 #info:hover #infotext {
+  opacity: 1;
+  visibility: visible;
+}
+
+main.account #infotext {
+  width: 200px;
+  padding: 10px;
+  line-height: 150%;
+  font-weight: normal;
+  font-size: 0.8rem;
+  position: absolute;
+  top: 100%;
+  right: 100%;
+  color: var(--white);
+  background-color: var(--red);
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--setengah);
+}
+
+main.account .move-link {
+  display: flex;
+  justify-content: center;
+}
+
+main.account .move-link a {
+  padding: 10px;
+  color: var(--black);
+  position: relative;
+}
+
+main.account .move-link-bg {
+  color: var(--red) !important;
+}
+
+main.account .move-link-bg::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--red);
+}
+
+/*---------------------------------------------DATA WAJIB---------------------------------------------*/
+main.account .move-link i {
+  pointer-events: none;
+}
+
+main.account .wajib .data,
+main.account .setting .data,
+main.account .setting .data {
+  margin-bottom: 2rem;
+}
+
+main.account .wajib .label,
+main.account .setting .label {
+  font-weight: 500;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+main.account .wajib .data p,
+main.account .setting .data p,
+main.account .optional input {
+  background-color: var(--white-dark);
+  border: 1px solid var(--black01);
+}
+
+main.account .wajib .data p,
+main.account .setting .data p {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+main.account .wajib a,
+main.account .setting a {
+  color: var(--black);
+}
+
+main.account .wajib a:hover,
+main.account .setting a:hover {
+  color: var(--red);
+}
+
+main.account .date_created {
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-align: end;
+  letter-spacing: 1px;
+}
+
+/*---------------------------------------------DATA OPTIONAL---------------------------------------------*/
+main.account .optional form {
+  display: grid;
+  grid-template-areas:
+    "child1 child1 child2 child2"
+    "child3 child3 child4 child4"
+    "child5 child5 child5 child6"
+    "child7 child7 . .";
+  gap: 2rem;
+}
+
+main.account .optional .box-input {
+  display: flex;
+  flex-direction: column;
+}
+
+main.account .optional .box-input:nth-child(1) {
+  grid-area: child1;
+}
+
+main.account .optional .box-input:nth-child(2) {
+  grid-area: child2;
+}
+
+main.account .optional .box-input:nth-child(3) {
+  grid-area: child3;
+}
+
+main.account .optional .box-input:nth-child(4) {
+  grid-area: child4;
+}
+
+main.account .optional .box-input:nth-child(5) {
+  grid-area: child5;
+}
+
+main.account .optional .box-input:nth-child(6) {
+  grid-area: child6;
+}
+
+main.account .optional .box-input:nth-child(7) {
+  grid-area: child7;
+}
+
+main.account .optional label {
+  margin-bottom: 0.5rem;
+}
+
+main.account .optional input {
+  padding: 10px;
+  transition: var(--setengah);
+}
+
+main.account .optional input:focus {
+  outline: 0;
+  border: 1px solid transparent;
+  box-shadow: 0 0 3px 1px var(--black03);
+}
+
+main.account .optional input::placeholder {
+  font-family: var(--montserrat);
+}
+
+main.account .optional button {
+  margin-top: 1rem;
+  padding: 20px 30px;
+  width: -webkit-max-content;
+  width: max-content;
+  color: var(--white);
+  border: 0;
+  background-color: var(--black-bold);
+  letter-spacing: 1px;
+  font-weight: 600;
+  transition: var(--setengah);
+}
+
+main.account .optional button:hover {
+  background-color: var(--red);
+}
+
+/*---------------------------------------------SETTING ACCOUNT---------------------------------------------*/
+main.account .setting .remove-account p,
+main.account .setting .remove-account i {
+  color: var(--white);
+}
+
+main.account .setting .remove-account p,
+main.account .setting .logout p {
+  max-width: 300px;
+  background-color: var(--red);
+}
+
+main.account .setting .logout p {
+  background-color: transparent;
+  border: 1px solid var(--black01);
+}
