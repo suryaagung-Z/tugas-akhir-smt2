@@ -1,20 +1,24 @@
 package com.core.perabot.controllers.model.models;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
+import lombok.Data;
 
-@Entity
+@Data
 @Table(name = "users")
+@Entity
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_pembeli")
     private Long id_pembeli;
 
+    @Column(name = "nama_pembeli")
     private String nama_pembeli;
 
+    @Column(name = "email")
     private String email;
 
+    @Column(name = "password")
     private String password;
 }

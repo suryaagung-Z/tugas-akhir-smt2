@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -26,6 +26,12 @@
 </head>
 <body>
 
+<div th:text="${data}"></div>
+
+<!--<div th:each="d : ${data}">-->
+<!--    <div th:text="${d.email}"></div>-->
+<!--</div>-->
+
 <div class="s300-">
     <p>maaf layar anda terlalu kecil</p>
     <p class="stiker-s300-"></p>
@@ -34,6 +40,7 @@
 <div id="to-top" class="cursor-pointer-custom">
     <i class="fas fa-chevron-up"></i>
 </div>
+
 
 <div th:replace="~{components/navbar.html :: navbar}"></div>
 

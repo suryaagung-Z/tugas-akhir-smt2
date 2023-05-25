@@ -1,4 +1,3 @@
-
 CREATE TABLE IF NOT EXISTS users(
     id_pembeli SERIAL PRIMARY KEY,
     nama_pembeli VARCHAR(255) NOT NULL,
