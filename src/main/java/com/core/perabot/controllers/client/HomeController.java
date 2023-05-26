@@ -1,6 +1,6 @@
 package com.core.perabot.controllers.client;
 
-import com.core.perabot.model.models.User;
+import com.core.perabot.model.models.Pembeli;
 import com.core.perabot.model.repository.UserRepository;
 import com.core.perabot.services.ImageService;
 import org.springframework.http.HttpStatus;
@@ -24,7 +24,7 @@ public class HomeController {
 
     @GetMapping("/")
     public String index(Model model){
-        List<User> users = userRepository.findAll();
+        List<Pembeli> users = userRepository.findAll();
 
         model.addAttribute("data1", users);
         return "home";
