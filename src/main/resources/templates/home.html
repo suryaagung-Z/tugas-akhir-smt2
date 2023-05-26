@@ -26,11 +26,10 @@
 </head>
 <body>
 
-<div th:text="${data}"></div>
-
-<!--<div th:each="d : ${data}">-->
-<!--    <div th:text="${d.email}"></div>-->
-<!--</div>-->
+<form action="/upload" method="POST" enctype="multipart/form-data">
+    <input type="file" name="file" id="">
+    <button type="submit">submit</button>
+</form>
 
 <div class="s300-">
     <p>maaf layar anda terlalu kecil</p>

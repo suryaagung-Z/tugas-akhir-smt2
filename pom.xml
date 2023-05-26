@@ -54,6 +54,14 @@
             <artifactId>flyway-core</artifactId>
         </dependency>
 
+        <!--Group com.dropbox.core-->
+        <dependency>
+            <groupId>com.dropbox.core</groupId>
+            <artifactId>dropbox-core-sdk</artifactId>
+            <version>5.4.4</version>
+        </dependency>
+
+
         <!--Group "org.postgresql"-->
         <dependency>
             <groupId>org.postgresql</groupId>
