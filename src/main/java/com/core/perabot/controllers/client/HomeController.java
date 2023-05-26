@@ -20,7 +20,9 @@ public class HomeController {
     @GetMapping("/")
     public String index(Model model){
         List<User> users = userRepository.findAll();
+        List<User> nama = userRepository.findByNamaPembeli("Budy");
         model.addAttribute("data", users);
+        model.addAttribute("data2", nama);
         return "home";
     }
 }
