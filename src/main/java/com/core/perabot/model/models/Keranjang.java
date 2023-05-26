@@ -1,4 +1,4 @@
-package com.core.perabot.controllers.model.models;
+package com.core.perabot.model.models;
 
 import jakarta.persistence.*;
 import lombok.Data;

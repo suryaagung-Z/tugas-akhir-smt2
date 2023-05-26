@@ -1,7 +1,7 @@
 package com.core.perabot.controllers.client;
 
-import com.core.perabot.controllers.model.models.User;
-import com.core.perabot.controllers.model.repository.UserRepository;
+import com.core.perabot.model.models.User;
+import com.core.perabot.model.repository.UserRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;

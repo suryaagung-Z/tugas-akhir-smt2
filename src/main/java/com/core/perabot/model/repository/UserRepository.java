@@ -1,10 +1,7 @@
-package com.core.perabot.controllers.model.repository;
+package com.core.perabot.model.repository;
 
-import com.core.perabot.controllers.model.models.User;
+import com.core.perabot.model.models.User;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
-
-import java.util.List;
 import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
