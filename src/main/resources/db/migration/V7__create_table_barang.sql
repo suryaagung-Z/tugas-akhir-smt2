@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS barang (
     gambar_url VARCHAR (255) NOT NULL,
     waktu_ditambahkan TIMESTAMP NOT NULL,
     terakhir_diperbarui TIMESTAMP NOT NULL,
-    setatus_aktif BOOLEAN NOT NULL,
+    status_aktif BOOLEAN NOT NULL,
     FOREIGN KEY (id_kategori)
     REFERENCES kategori (id_kategori),
     FOREIGN KEY (id_admin)
