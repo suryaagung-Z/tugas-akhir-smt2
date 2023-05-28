@@ -74,8 +74,10 @@ main.account .profile-image .img {
 
 /*---------------------------------------------BOX ACCOUNT---------------------------------------------*/
 main.account .box-account {
+  max-width: 1000px;
   height: -webkit-max-content;
   height: max-content;
+  margin: auto;
   padding: 60px 40px;
   background-color: var(--white);
   box-shadow: 0 0 10px 1px var(--black01);
@@ -152,22 +154,32 @@ main.account .move-link-bg::after {
   background-color: var(--red);
 }
 
+main.account input::placeholder {
+  transition: var(--setengah);
+}
+
+main.account input:focus::placeholder {
+  transition-delay: var(--setengah);
+  opacity: 0;
+}
+
 /*---------------------------------------------DATA WAJIB---------------------------------------------*/
 main.account .move-link i {
   pointer-events: none;
 }
 
-main.account .wajib .data,
-main.account .setting .data,
-main.account .setting .data {
+main.account .wajib .data {
   margin-bottom: 2rem;
 }
 
-main.account .wajib .label,
-main.account .setting .label {
+main.account .label,
+main.account label {
+  text-transform: uppercase;
+  font-size: 0.7rem;
   font-weight: 500;
   display: block;
   margin-bottom: 0.5rem;
+  letter-spacing: 1px;
 }
 
 main.account .wajib .data p,
@@ -179,7 +191,8 @@ main.account .optional input {
 
 main.account .wajib .data p,
 main.account .setting .data p {
-  padding: 20px;
+  font-size: 0.9rem;
+  padding: 10px;
   display: flex;
   justify-content: space-between;
 }
@@ -206,10 +219,12 @@ main.account .date_created {
 main.account .optional form {
   display: grid;
   grid-template-areas:
-    "child1 child1 child2 child2"
-    "child3 child3 child4 child4"
-    "child5 child5 child5 child6"
-    "child7 child7 . .";
+    "child1 child1 child1 child1"
+    "child2 child2 child3 child3"
+    "child4 child4 child5 child5"
+    "child6 child6 child6 child6"
+    "child7 child7 child8 child8"
+    "child9 child9 child9 child9";
   gap: 2rem;
 }
 
@@ -246,8 +261,12 @@ main.account .optional .box-input:nth-child(7) {
   grid-area: child7;
 }
 
-main.account .optional label {
-  margin-bottom: 0.5rem;
+main.account .optional .box-input:nth-child(8) {
+  grid-area: child8;
+}
+
+main.account .optional .box-input:nth-child(9) {
+  grid-area: child9;
 }
 
 main.account .optional input {
@@ -278,19 +297,28 @@ main.account .optional button {
   transition: var(--setengah);
 }
 
-main.account .optional button:hover {
+main.account .optional #btnPersonalData:hover {
   background-color: var(--red);
 }
 
+main.account .optional button.bdpd {
+  opacity: 0.5;
+  cursor: not-allowed !important;
+}
+
 /*---------------------------------------------SETTING ACCOUNT---------------------------------------------*/
+main.account .setting .box-data {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
 main.account .setting .remove-account p,
 main.account .setting .remove-account i {
   color: var(--white);
 }
 
-main.account .setting .remove-account p,
-main.account .setting .logout p {
-  max-width: 300px;
+main.account .setting .remove-account p {
   background-color: var(--red);
 }
 

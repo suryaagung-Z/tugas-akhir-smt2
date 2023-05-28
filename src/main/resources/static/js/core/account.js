@@ -28,3 +28,81 @@ for( let b=0; b<btn_wajib.length; b++ ){
         contentMove.classList.remove('move-hide')
     }
 }
+
+//----------------------------------------------------------------------CHECK POPUP
+lnkChck[0].onclick = (e)=>{
+    e.preventDefault()
+
+    const href = lnkChck[0].getAttribute('href')
+    const text = lnkChck[0].getAttribute('data-textPC')
+
+    boxPC.classList.add('box-popup-chck-enable')
+    PC.classList.add('popup-chck-enable')
+    textPC.innerHTML = text
+
+    btnPC[1].onclick = ()=>{
+        location.href = `${href}`
+    }
+
+    btnPC[0].onclick = ()=>{
+        removeCPC()
+    }
+
+    crossPC.onclick = ()=>{
+        removeCPC()
+    }
+
+    window.onclick = (e)=>{
+        const closestPC = e.target.closest('#popup-chck')
+        const cross = e.target.closest('.lnk-chck')
+        if( !(closestPC) && !(cross) ){
+            removeCPC()
+        }
+    }
+}
+
+//----------------------------------------------------------------------SAVE PERSONAL DATA
+const formPersonalData = document.querySelector('#personalData')
+const btnPersonalData = formPersonalData.querySelector('#btnPersonalData')
+btnPersonalData.disabled = true
+const valPersonalData = formPersonalData.querySelectorAll('input')
+
+btnPersonalData.onclick = (e)=>{
+    e.preventDefault()
+    
+    const url = formPersonalData.getAttribute('data-url')
+    const data = {};
+    for( let vpd=0; vpd<valPersonalData.length; vpd++ ){
+        const name = valPersonalData[vpd].getAttribute('name')
+        const value = valPersonalData[vpd].value
+        data[`${name}`] = `${value}`
+    }
+    
+    const personalData = new XMLHttpRequest()
+    personalData.open('POST', `${url}`, true)
+    personalData.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
+    personalData.setRequestHeader('X-Requested-With', 'XMLHttpRequest')
+    personalData.send(`data=${JSON.stringify(data)}`)
+    personalData.onreadystatechange = ()=>{
+        if( (personalData.readyState == 4) && (personalData.status == 200) ){
+            const result = JSON.parse(personalData.responseText)
+
+            if( result.redirect !== undefined ){
+                window.location.replace(`${result.redirect}`)
+                return
+            }
+
+            popup(result.message, result.bg)
+            btnPersonalData.classList.add('bdpd')
+            btnPersonalData.disabled = true
+        }
+    }
+}
+
+//----------------------------------------------------------------------IF INPUT CHANGES
+for( let cvd=0; cvd<valPersonalData.length; cvd++ ){
+    valPersonalData[cvd].onkeyup = ()=>{
+        btnPersonalData.classList.remove('bdpd')
+        btnPersonalData.disabled = false
+    }
+}

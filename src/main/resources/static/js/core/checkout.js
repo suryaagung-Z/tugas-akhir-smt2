@@ -1,12 +1,13 @@
+//----------------------------------------------------------------------PARALLAX
 const imgP = document.querySelector('.header img')
 window.onscroll = ()=>{
     let valScrl = window.scrollY
     imgP.style.top = `${valScrl * 0.5}px`
 }
 
+//----------------------------------------------------------------------SLIDER FADED
 const mainBox = document.querySelector('#main-box')
 const myPrevNext = document.querySelectorAll('#myprevnext')
-
 function fade(elmn, type){
     let nextElmn, prevElmn
     if( type == 'next' ){
@@ -58,19 +59,22 @@ myPrevNext[1].onclick = ()=>{
     fade( elm(), 'next' )
 }
 
+//----------------------------------------------------------------------CHOOSE COURIER
 const inputAll = document.querySelectorAll('.ir')
 const slct = document.querySelector('#type-courier')
 const chooseT = document.querySelectorAll('.sharing-box3 .choose-t')
-for( let a=0; a<inputAll.length; a++ ){
-    if( inputAll[a].value == '' ){
-        chooseT[0].classList.remove('tfc-hide')
-    }
-}
 
 slct.onchange = ()=>{
     const val = slct.value
     for( let ct=0; ct<chooseT.length; ct++ ){
         chooseT[ct].classList.add('tfc-hide')
     }
-    const elmT = document.querySelector(`[data-tfc="${val}"]`).classList.remove('tfc-hide')
+    document.querySelector(`[data-tfc="${val}"]`).classList.remove('tfc-hide')
+}
+
+//----------------------------------------------------------------------FUNC NUM PRICE
+const priceNum = document.querySelectorAll('#numPrice')
+for( let pn=0; pn<priceNum.length; pn++ ){
+    const text = priceNum[pn].innerText
+    priceNum[pn].innerHTML = funcNum(text)
 }

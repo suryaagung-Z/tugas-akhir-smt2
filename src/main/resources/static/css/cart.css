@@ -1,265 +1,267 @@
 /*---------------------------------------------HEADER---------------------------------------------*/
 main.cart .header {
-  width: 100%;
-  height: 200px;
-  overflow: hidden;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+	width: 100%;
+	height: 200px;
+	overflow: hidden;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 main.cart .header img {
-  width: 100%;
-  height: 150%;
-  object-fit: cover;
-  position: relative;
-  top: 0;
+	width: 100%;
+	height: 150%;
+	object-fit: cover;
+	position: relative;
+	top: 0;
 }
 
 main.cart .header .text {
-  width: 100%;
-  height: 100%;
-  background-color: var(--black04);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: var(--black04);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	top: 0;
 }
 
 main.cart .header p {
-  color: var(--white);
-  font-size: 3rem;
-  font-weight: 600;
+	color: var(--white);
+	font-size: 3rem;
+	font-weight: 600;
 }
 
 /*---------------------------------------------IF NOT CONTENT---------------------------------------------*/
 main.cart .ifNotContent {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+main.cart .ifNotContent-disable {
+	display: none;
 }
 
 svg {
-  display: block;
+	display: block;
 }
 
 main.cart .ifNotContent #anim-no-product {
-  width: 300px;
+	width: 300px;
 }
 
 main.cart .ifNotContent .text {
-  margin-bottom: 40px;
-  display: inherit;
-  justify-content: inherit;
-  align-items: inherit;
-  flex-direction: inherit;
+	margin-bottom: 40px;
+	display: inherit;
+	justify-content: inherit;
+	align-items: inherit;
+	flex-direction: inherit;
 }
 
 main.cart .ifNotContent p {
-  font-size: 2rem;
-  text-transform: capitalize;
+	font-size: 2rem;
+	text-transform: capitalize;
 }
 
 main.cart .ifNotContent a {
-  margin-top: 20px;
-  padding: 10px 20px;
-  color: var(--white);
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  background-color: var(--red);
+	margin-top: 20px;
+	padding: 10px 20px;
+	color: var(--white);
+	font-size: 0.8rem;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	background-color: var(--red);
 }
 
 /*---------------------------------------------CONTENT---------------------------------------------*/
 main.cart .content {
-  padding: 60px 20px;
+	padding: 60px 20px;
 }
 
 main.cart .head {
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  border-top: 1px solid var(--black01);
+	font-size: 0.8rem;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	border-top: 1px solid var(--black01);
 }
 
 main.cart .price {
-  font-size: 0.8rem;
-  font-weight: 800;
-  text-transform: none;
+	font-size: 0.8rem;
+	font-weight: 800;
+	text-transform: none;
 }
 
 /*---------------------------------------------TABLE---------------------------------------------*/
 main.cart .top table,
 th,
 td {
-  padding: 15px;
-  border-top: 1px solid var(--black01);
-  border-bottom: 1px solid var(--black01);
-  border-collapse: collapse;
+	padding: 15px;
+	border-top: 1px solid var(--black01);
+	border-bottom: 1px solid var(--black01);
+	border-collapse: collapse;
 }
 
-main.cart .top .product a {
-  display: block;
-  width: max-content;
-  margin: auto;
+main.cart .top a {
+	display: block;
+	width: max-content;
 }
 
-main.cart .top .tbl,
+main.cart .top .product a.anchor-tbl {
+	width: max-content;
+	margin: auto;
+}
+
 main.cart .top table {
-  width: 100%;
+	width: 100%;
 }
 
 main.cart .top .head-table {
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+	font-size: 0.7rem;
+	text-transform: uppercase;
+	letter-spacing: 2px;
 }
 
 main.cart .top .mobile {
-  display: none;
+	display: none;
 }
 
 main.cart .top table td.productName {
-  width: 30%;
-  text-align: start;
+	width: 30%;
+	text-align: start;
 }
 
 main.cart .top table td {
-  text-align: center;
+	text-align: center;
 }
 
-main.cart .top .cross a {
-  color: var(--black);
+main.cart .top a {
+	color: var(--black);
 }
 
-main.cart .top .cross a:hover {
-  color: var(--red);
+main.cart .top a:hover {
+	color: var(--red);
 }
 
-main.cart .top .tbl img {
-  width: 80px;
-  display: block;
+main.cart .top table img {
+	width: 80px;
+	display: block;
 }
 
 main.cart .top table .price {
-  white-space: nowrap;
+	white-space: nowrap;
 }
 
 main.cart .top .update-cart {
-  display: flex;
-  justify-content: flex-end;
+	display: flex;
+	justify-content: flex-end;
 }
 
 main.cart .top .update-cart button {
-  margin-top: 20px;
-  padding: 20px;
-  font-size: 0.8rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: var(--black);
-  border: 1px solid var(--black);
-  border-radius: 5px;
-  background-color: transparent;
+	margin-top: 20px;
+	padding: 20px;
+	font-size: 0.8rem;
+	font-weight: 800;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color: var(--black);
+	border: 1px solid var(--black);
+	border-radius: 5px;
+	background-color: transparent;
 }
 
 main.cart .top .update-cart .btn-disabled {
-  color: var(--black04) !important;
-  border: 1px solid var(--black04) !important;
-  cursor: not-allowed !important;
+	color: var(--black04) !important;
+	border: 1px solid var(--black04) !important;
+	cursor: not-allowed !important;
 }
 
 /*---------------------------------------------CUSTOM INPUT NUMBER---------------------------------------------*/
 main.cart .top .custom-number {
-  display: flex;
-  width: max-content;
-  margin: 0 auto;
+	display: flex;
+	width: max-content;
+	margin: 0 auto;
 }
 
 main.cart .top input#custom-number,
 main.cart .top .box-prev-next {
-  background-color: var(--white);
-  text-align: center;
+	background-color: var(--white);
+	text-align: center;
 }
 
 main.cart .top input#custom-number {
-  width: 40px;
-  padding: 10px;
-  border: 1px solid var(--black01);
-  border-right: 0;
+	width: 40px;
+	padding: 10px;
+	border: 1px solid var(--black01);
+	border-right: 0;
 }
 
 main.cart .top input:focus {
-  outline: none;
+	outline: none;
 }
 
 main.cart .top input#custom-number::-webkit-inner-spin-button,
 main.cart .top input#custom-number::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
 }
 
 main.cart .top .box-prev-next {
-  height: 100%;
-  border: 1px solid var(--black01);
-  display: grid;
-  grid-template-rows: 1fr 1fr;
+	height: 100%;
+	border: 1px solid var(--black01);
+	display: grid;
+	grid-template-rows: 1fr 1fr;
 }
 
 main.cart .top .box-prev-next i {
-  font-size: 0.8rem;
-  padding: 5px 10px;
+	font-size: 0.8rem;
+	padding: 5px 10px;
 }
 
 main.cart .top .box-prev-next i:first-child {
-  border-bottom: 1px solid var(--black01);
-}
-
-main.cart .top .box-prev-next .this-disabled {
-  pointer-events: none;
-  opacity: 0.5;
+	border-bottom: 1px solid var(--black01);
 }
 
 /*---------------------------------------------LINK CHECKOUT---------------------------------------------*/
 main.cart .bottom {
-  margin-top: 60px;
-  display: flex;
-  justify-content: flex-end;
+	margin-top: 60px;
+	display: flex;
+	justify-content: flex-end;
 }
 
 main.cart .bottom .box-right {
-  width: 50%;
+	width: 50%;
 }
 
 main.cart .bottom .box {
-  padding: 20px;
-  display: flex;
-  justify-content: space-between;
+	padding: 20px;
+	display: flex;
+	justify-content: space-between;
 }
 
 main.cart .bottom .box-text {
-  width: 80%;
-  display: flex;
-  justify-content: space-between;
+	width: 80%;
+	display: flex;
+	justify-content: space-between;
 }
 
 main.cart .bottom .head-lnk-checkout {
-  font-size: 2rem;
-  text-transform: capitalize;
-  margin-bottom: 20px;
+	font-size: 2rem;
+	text-transform: capitalize;
+	margin-bottom: 20px;
 }
 
 main.cart .bottom .link-checkout {
-  display: block;
-  padding: 20px 0;
-  margin-top: 20px;
-  color: var(--white);
-  background-color: var(--red);
-  font-size: 0.8rem;
-  font-weight: 800;
-  text-align: center;
-  text-transform: uppercase;
+	display: block;
+	padding: 20px 0;
+	margin-top: 20px;
+	color: var(--white);
+	background-color: var(--red);
+	font-size: 0.8rem;
+	font-weight: 800;
+	text-align: center;
+	text-transform: uppercase;
 }

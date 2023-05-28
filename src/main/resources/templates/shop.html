@@ -29,14 +29,7 @@
 </head>
 <body>
 
-<div class="s300-">
-    <p>maaf layar anda terlalu kecil</p>
-    <p class="stiker-s300-"></p>
-</div>
-
-<div id="to-top" class="cursor-pointer-custom">
-    <i class="fas fa-chevron-up"></i>
-</div>
+<!--<div th:text="${query}"></div>-->
 
 <div th:replace="~{components/navbar.html :: navbar}"></div>
 
@@ -44,78 +37,51 @@
     <div class="current-page">
         <p> <a href="/">home</a> <span class="this-page">/ shop</span></p>
     </div>
+
     <div class="header-shop section-shop">
         <p class="judul montserrat">Produk</p>
-        <form action="" class="sorting" id="sorting">
-            <select name="" id="sortir" class="josefin">
-                <option value="" selected>Pilih bawaan</option>
-                <option value="">Pilih popularitas</option>
-                <option value="">Pilih terbaru</option>
-                <option value="">Pilih harga rendah ke tinggi</option>
-                <option value="">Pilih harga tinggi ke rendah</option>
-            </select>
-        </form>
+        <select id="sortir" class="josefin">
+            <option value="default" selected>Pilih bawaan</option>
+            <option value="bestSeller">Pilih terlaris</option>
+            <option value="latest">Pilih terbaru</option>
+            <option value="lowToHigh">Pilih harga rendah ke tinggi</option>
+            <option value="highToLow">Pilih harga tinggi ke rendah</option>
+        </select>
     </div>
+
     <div class="content section-shop">
         <div class="filter-shop" id="filter-shop">
             <div class="category section-filter">
                 <p class="head-filter montserrat">Kategori <i class="far fa-times-circle cursor-pointer-custom"></i></p>
                 <ul>
-                    <li>
-                        <a href="">Meja</a>
-                        <span class="total">&nbsp;(0)</span>
-                    </li>
-                    <li>
-                        <a href="">Sofa</a>
-                        <span class="total">&nbsp;(0)</span>
-                    </li>
-                    <li>
-                        <a href="">Kasur</a>
-                        <span class="total">&nbsp;(0)</span>
-                    </li>
-                    <li>
-                        <a href="">Kursi</a>
-                        <span class="total">&nbsp;(0)</span>
-                    </li>
-                    <li>
-                        <a href="">Tanaman hias</a>
-                        <span class="total">&nbsp;(0)</span>
-                    </li>
-                    <li>
-                        <a href="">Lampu</a>
-                        <span class="total">&nbsp;(0)</span>
-                    </li>
-                    <li>
-                        <a href="">Lemari</a>
-                        <span class="total">&nbsp;(0)</span>
-                    </li>
-                    <li>
-                        <a href="">Cermin</a>
-                        <span class="total">&nbsp;(0)</span>
+                    <!--Category-->
+                    <li th:each="kategori,iterKategori : ${datakategori}">
+                        <a id="filterCategory" th:text="${kategori.nama_kategori}"></a> &nbsp;
+                        <span class="total" th:text="'(' + ${productCounts[iterKategori.index]} + ')'">&nbsp</span>
                     </li>
                 </ul>
             </div>
             <div class="search-product section-filter">
                 <p class="head-filter montserrat">cari</p>
-                <form action="" id="search-product">
-                    <input type="search" name="" id="src-product" class="josefin" placeholder="Cari produk...">
-                    <button id="submit" class="josefin cursor-pointer-custom">cari</button>
-                </form>
+                <div class="boxInput">
+                    <input type="search" id="src-product" class="josefin" placeholder="Cari produk..." data-url="/shop/src">
+                    <label class="for cursor-pointer-custom" id="btnSrc">cari</label>
+                </div>
             </div>
             <div class="section-filter filter-price">
                 <p class="head-filter montserrat">Filter harga</p>
                 <div id="my-range"></div>
                 <div class="box-count-range">
-                    <button class="josefin cursor-pointer-custom">filter</button>
+                    <button id="priceFilter" class="josefin cursor-pointer-custom" data-url="/shop/pricefilters">filter</button>
                     <span class="range-count">
-                            <span>
-                                Rp&nbsp;<p id="low"></p>
-                            </span>
-                            <i class="fas fa-arrows-alt-v"></i>
-                            <span>
-                                Rp&nbsp;<p id="high"></p>
-                            </span>
+                        <span>
+                            Rp&nbsp;<p id="low">0</p>
                         </span>
+                        <i class="fas fa-arrows-alt-v"></i>
+                        <span>
+                            Rp&nbsp;<p id="high">1000</p>
+                        </span>
+                    </span>
                 </div>
             </div>
 
@@ -125,152 +91,46 @@
             </div>
         </div>
 
-        <div class="content-shop">
-            <div class="box-product">
-                <form>
-                    <div class="sell-box-bg">
-                        <a href="">
-                            <img src="/image/product/sofa/sofa-D0001.jpg" class="bg" alt="">
-                        </a>
-                        <div class="to-cart">
-                            <button type="submit" class="cursor-pointer-custom josefin">tambah ke keranjang</button>
+        <div class="content-shop <?php if ($dataProduct == NULL) echo 'content-shop-1r'; ?>">
+            <!--Jika data kosong-->
+<!--            <div class="box-animNoResult">-->
+<!--                <div id="animNoResult" data-lnkAnim="/js/animated/noResult.json"></div>-->
+<!--                <p>-->
+<!--                    <span class="text">tidak ada hasil</span>-->
+<!--                    <span id="valNoResult"></span>-->
+<!--                </p>-->
+<!--            </div>-->
+
+            <div class="box-product" id="box-product" th:each="d : ${databarang}">
+                <div class="sell-box-bg">
+                    <a href="/shop/detail-product/namaproduk">
+                        <img th:src="${d.gambar_url}" class="bg">
+                    </a>
+                    <div id="boxLoading" class="boxLoading-hide">
+                        <div class="productSpinner">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
                         </div>
                     </div>
-                    <div class="text">
-                        <p class="sellCategory">Sofa</p>
-                        <p><span class="sellProduct">Sofa</span> tipe <span class="tipe">(D0001)</span></p>
-                        <p class="sellPrice">Rp 0</p>
+                </div>
+                <div class="text" id="textP" data-P="0|1" data-ctg="kategori">
+                    <div id="sellName" th:text="${d.nama_barang}"></div>
+                    <div class="btb">
+                        <p class="sellPrice">Rp <span id="priceNum" th:text="${d.harga}"></span></p>
+                        <p class="Psold" th:text="${d.stok} ? 'Tersedia' : 'Kosong'"></p>
                     </div>
-
-                    <input type="hidden" name="fileName" value="fileName">
-                    <input type="hidden" name="category" value="category">
-                    <input type="hidden" name="productName" value="productName">
-                    <input type="hidden" name="tipe" value="tipe">
-                    <input type="hidden" name="price" value="price">
-                </form>
+                </div>
             </div>
-            <div class="box-product">
-                <form>
-                    <div class="sell-box-bg">
-                        <a href="">
-                            <img src="/image/product/lemari/lemari-D0002.jpg" class="bg" alt="">
-                        </a>
-                        <div class="to-cart">
-                            <button type="submit" class="cursor-pointer-custom josefin">tambah ke keranjang</button>
-                        </div>
-                    </div>
-                    <div class="text">
-                        <p class="sellCategory">Lemari</p>
-                        <p><span class="sellProduct">Lemari</span> tipe <span class="tipe">(D0002)</span></p>
-                        <p class="sellPrice">Rp 0</p>
-                    </div>
 
-                    <input type="hidden" name="fileName" value="fileName">
-                    <input type="hidden" name="category" value="category">
-                    <input type="hidden" name="productName" value="productName">
-                    <input type="hidden" name="tipe" value="tipe">
-                    <input type="hidden" name="price" value="price">
-                </form>
-            </div>
-            <div class="box-product">
-                <form>
-                    <div class="sell-box-bg">
-                        <a href="">
-                            <img src="/image/product/meja/meja-D0005.jpg" class="bg" alt="">
-                        </a>
-                        <div class="to-cart">
-                            <button type="submit" class="cursor-pointer-custom josefin">tambah ke keranjang</button>
-                        </div>
-                    </div>
-                    <div class="text">
-                        <p class="sellCategory">Meja</p>
-                        <p><span class="sellProduct">Meja</span> tipe <span class="tipe">(D0005)</span></p>
-                        <p class="sellPrice">Rp 0</p>
-                    </div>
-
-                    <input type="hidden" name="fileName" value="fileName">
-                    <input type="hidden" name="category" value="category">
-                    <input type="hidden" name="productName" value="productName">
-                    <input type="hidden" name="tipe" value="tipe">
-                    <input type="hidden" name="price" value="price">
-                </form>
-            </div>
-            <div class="box-product">
-                <form>
-                    <div class="sell-box-bg">
-                        <a href="">
-                            <img src="/image/product/kursi/kursi-D0003.jpg" class="bg" alt="">
-                        </a>
-                        <div class="to-cart">
-                            <button type="submit" class="cursor-pointer-custom josefin">tambah ke keranjang</button>
-                        </div>
-                    </div>
-                    <div class="text">
-                        <p class="sellCategory">Kursi</p>
-                        <p><span class="sellProduct">Kursi</span> tipe <span class="tipe">(D0003)</span></p>
-                        <p class="sellPrice">Rp 0</p>
-                    </div>
-
-                    <input type="hidden" name="fileName" value="fileName">
-                    <input type="hidden" name="category" value="category">
-                    <input type="hidden" name="productName" value="productName">
-                    <input type="hidden" name="tipe" value="tipe">
-                    <input type="hidden" name="price" value="price">
-                </form>
-            </div>
-            <div class="box-product">
-                <form>
-                    <div class="sell-box-bg">
-                        <a href="">
-                            <img src="/image/product/tanaman/echeveria-D0001.jpg" class="bg" alt="">
-                        </a>
-                        <div class="to-cart">
-                            <button type="submit" class="cursor-pointer-custom josefin">tambah ke keranjang</button>
-                        </div>
-                    </div>
-                    <div class="text">
-                        <p class="sellCategory">Tanaman hias</p>
-                        <p><span class="sellProduct">Echeveria</span> tipe <span class="tipe">(D0001)</span></p>
-                        <p class="sellPrice">Rp 0</p>
-                    </div>
-
-                    <input type="hidden" name="fileName" value="fileName">
-                    <input type="hidden" name="category" value="category">
-                    <input type="hidden" name="productName" value="productName">
-                    <input type="hidden" name="tipe" value="tipe">
-                    <input type="hidden" name="price" value="price">
-                </form>
-            </div>
-            <div class="box-product">
-                <form>
-                    <div class="sell-box-bg">
-                        <a href="">
-                            <div class="bg" style="background-image: url(/image/product/lampu/lampu-D0004.jpg);"></div>
-                        </a>
-                        <div class="to-cart">
-                            <button type="submit" class="cursor-pointer-custom josefin">tambah ke keranjang</button>
-                        </div>
-                    </div>
-                    <div class="text">
-                        <p class="sellCategory">Lampu</p>
-                        <p><span class="sellProduct">Lampu</span> tipe <span class="tipe">(D0004)</span></p>
-                        <p class="sellPrice">Rp 0</p>
-                    </div>
-
-                    <input type="hidden" name="fileName" value="fileName">
-                    <input type="hidden" name="category" value="category">
-                    <input type="hidden" name="productName" value="productName">
-                    <input type="hidden" name="tipe" value="tipe">
-                    <input type="hidden" name="price" value="price">
-                </form>
-            </div>
         </div>
     </div>
 </main>
 
 <div th:replace="~{components/footer.html :: footer}"></div>
 
-<script src="/js/script.js"></script>
+<script src="/js/core/script.js"></script>
 <script src="/js/range/nouislider.min.js"></script>
 <script src="/js/core/shop.js"></script>
 </body>

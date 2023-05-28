@@ -9,6 +9,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 @Table(name = "kategori")
 @Entity
 public class Kategori {
+
     @Id
     @Column(name = "id_kategori")
     private String id_kategori;
@@ -29,6 +30,5 @@ public class Kategori {
     @UpdateTimestamp
     @Column (name = "terakhir_diperbarui")
     private String terakhir_diperbarui;
-
 }
 

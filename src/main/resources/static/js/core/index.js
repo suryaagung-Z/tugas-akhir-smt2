@@ -1,6 +1,6 @@
 const category = document.querySelector('#category')
 
-var swiper = new Swiper('.swiper', {
+let swiper = new Swiper('.swiper', {
     spaceBetween: 20,
     loop: true,
     speed: 500,
@@ -24,7 +24,7 @@ var swiper = new Swiper('.swiper', {
             slidesPerView: 4
         }
     }
-})
+});
 
 window.addEventListener('scroll', ()=>{
 
@@ -37,13 +37,8 @@ window.addEventListener('scroll', ()=>{
     }
 })
 
-var typed = new Typed('#my-typing', {
-    strings: [
-        'furniture',
-        'design'
-    ],
-    typeSpeed: 100,
-    backSpeed: 50,
-    backDelay: 2000,
-    loop: true
-})
+//----------------------------------------------------------------------DIVISION OF NUMBERS
+const pirceNum = document.querySelectorAll('#priceNum')
+for( let pn=0; pn<pirceNum.length; pn++ ){
+    pirceNum[pn].innerText = funcNum(pirceNum[pn].innerText)
+}

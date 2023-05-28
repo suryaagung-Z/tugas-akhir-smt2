@@ -66,26 +66,25 @@ svg .logo {
 
 /*---------------------------------------------POPUP---------------------------------------------*/
 .box-popup {
-  width: 100%;
+  width: 50%;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
   flex-direction: column;
   position: fixed;
   top: 0;
-  right: 0;
+  right: 20px;
   z-index: 100;
 }
 
 .popup {
-  width: 50%;
+  width: 100%;
   padding: 10px 40px;
-  margin: 20px 20px 0 20px;
+  margin: 20px 0 0 0;
   text-align: center;
   font-size: 1.2rem;
   line-height: 120%;
   color: var(--white);
-  background-color: rgb(26, 191, 114);
   box-shadow: 0 0 10px 5px var(--black01);
   animation-name: popup;
   animation-duration: 1s;
@@ -105,6 +104,18 @@ svg .logo {
     right: 0px;
     opacity: 1;
   }
+}
+
+.popup-y {
+  background-color: rgb(238, 179, 0);
+}
+
+.popup-g {
+  background-color: rgb(26, 191, 114);
+}
+
+.popup-r {
+  background-color: rgb(220, 53, 69);
 }
 
 /*---------------------------------------------POPUP CHECK---------------------------------------------*/
@@ -184,4 +195,28 @@ svg .logo {
 
 .box-popup-chck button:last-child {
   background-color: var(--red);
+}
+
+/*---------------------------------------------ALERT---------------------------------------------*/
+main .alert {
+  color: var(--black);
+  margin-bottom: 1rem;
+  padding: 10px 20px;
+  font-size: 0.8rem;
+  text-align: center;
+  line-height: 150%;
+  letter-spacing: 1px;
+  box-shadow: 0 0 5px 1px var(--black01);
+}
+
+main .alert-r {
+  background-color: rgb(235, 177, 177);
+}
+
+main .alert-g {
+  background-color: rgb(179, 236, 169);
+}
+
+main .alert-y {
+  background-color: rgb(255, 205, 56);
 }

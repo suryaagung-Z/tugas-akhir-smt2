@@ -7,4 +7,4 @@ VALUES ('MJA', 1, 'Meja', 'kategori_meja.jpg', '2023-05-22 18:31:43', '2023-05-2
        ('KSR', 1, 'Kasur', 'kategori_kasur.jpg', '2023-05-21 14:51:23', '2023-05-22 18:31:43'),
        ('DPR', 1, 'Dapur', 'kategori_dapur.jpg', '2023-05-21 14:51:23', '2023-05-22 18:31:43'),
        ('ELT', 1, 'Elektronik', 'kategori_elektronik.jpg', '2023-05-21 14:51:23', '2023-05-22 18:31:43'),
-       ('SPR', 1, 'Spring Boot', 'kategori_springbed.jpg', '2023-05-21 14:51:23', '2023-05-22 18:31:43');
+       ('SPR', 1, 'Spring Bed', 'kategori_springbed.jpg', '2023-05-21 14:51:23', '2023-05-22 18:31:43');
