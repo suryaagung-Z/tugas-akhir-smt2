@@ -70,7 +70,7 @@ for( let val of filterCategory){
     val.onclick = (e)=>{
         e.preventDefault();
 
-        const text = val.innerText;
+        const text = e.target.getAttribute("data-idbarang");
         const parseUrl = urlParams(urlFC, encodeURI(text));
         window.location.href = parseUrl.url;
     }

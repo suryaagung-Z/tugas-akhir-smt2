@@ -134,9 +134,9 @@ window.onclick = (e)=>{
 }
 
 //----------------------------------------------------------------------DIVISION OF NUMBERS
-const pirceNum = document.querySelectorAll('#priceNum')
-for( let pn=0; pn<pirceNum.length; pn++ ){
-    pirceNum[pn].innerText = funcNum(pirceNum[pn].innerText)
+const priceNum = document.querySelectorAll('#priceNum')
+for( let pn=0; pn<priceNum.length; pn++ ){
+    priceNum[pn].innerText = funcNum(priceNum[pn].innerText)
 }
 
 //----------------------------------------------------------------------AJAX ADD TO CART

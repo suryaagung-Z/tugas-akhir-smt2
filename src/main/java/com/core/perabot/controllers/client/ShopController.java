@@ -31,14 +31,21 @@ public class ShopController {
     public String index(Model model, HttpServletRequest req) {
         List<Barang> products = barangRepository.findAllBy(true);
         List<Kategori> categories = categoryRepository.findAll();
+        Boolean srcBarangEmpty = false;
 
         // Query parameters to Map : {src=val}
         String queryString = req.getQueryString();
         Map<String, String> queryParams = parseQueryParams(queryString);
         List<Barang> productsByName = barangRepository.findByName(queryParams.get("src"));
-        if(productsByName.size() != 0){
-            products = productsByName;
+        if(queryParams.containsKey("src")){
+            if(productsByName.size() == 0){
+                products = new ArrayList<>();
+                srcBarangEmpty = true;
+            }else{
+                products = productsByName;
+            }
         }
+
 
         // Count Product By category
         List<Long> productCounts = new ArrayList<>();
@@ -48,9 +55,9 @@ public class ShopController {
         }
 
         model.addAttribute("databarang", products);
+        model.addAttribute("srcBarangEmpty", srcBarangEmpty);
         model.addAttribute("datakategori", categories);
         model.addAttribute("productCounts", productCounts);
-//        model.addAttribute("query", productsByName);
 
         return "shop";
     }
