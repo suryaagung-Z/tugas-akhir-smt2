@@ -4,13 +4,16 @@ import com.core.perabot.model.models.Barang;
 import com.core.perabot.model.models.Kategori;
 import com.core.perabot.model.repository.BarangRepository;
 import com.core.perabot.model.repository.CategoryRepository;
+import com.core.perabot.model.specifications.BarangSpecifications;
 import jakarta.servlet.http.HttpServletRequest;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -29,23 +32,20 @@ public class ShopController {
 
     @GetMapping("/shop")
     public String index(Model model, HttpServletRequest req) {
+        Map<String, String> queryParams = parseQueryParams(req.getQueryString());
+
         List<Barang> products = barangRepository.findAllBy(true);
         List<Kategori> categories = categoryRepository.findAll();
-        Boolean srcBarangEmpty = false;
 
-        // Query parameters to Map : {src=val}
-        String queryString = req.getQueryString();
-        Map<String, String> queryParams = parseQueryParams(queryString);
-        List<Barang> productsByName = barangRepository.findByName(queryParams.get("src"));
-        if(queryParams.containsKey("src")){
-            if(productsByName.size() == 0){
-                products = new ArrayList<>();
-                srcBarangEmpty = true;
-            }else{
-                products = productsByName;
-            }
+        List<Barang> ptes = null;
+        Boolean filterEmpty = false;
+        if(!queryParams.isEmpty()){
+            String ctg = queryParams.getOrDefault("ctg", null);
+            String src = queryParams.getOrDefault("src", null);
+            Specification<Barang> spec = Specification.where(BarangSpecifications.hasCategory(ctg))
+                    .and(BarangSpecifications.hasSearch(src));
+            ptes = barangRepository.findAll(spec);
         }
-
 
         // Count Product By category
         List<Long> productCounts = new ArrayList<>();
@@ -54,10 +54,16 @@ public class ShopController {
             productCounts.add(count);
         }
 
+        // Products
         model.addAttribute("databarang", products);
-        model.addAttribute("srcBarangEmpty", srcBarangEmpty);
+        // Filter barang is empty
+        model.addAttribute("filterEmpty", filterEmpty);
+        // Categories
         model.addAttribute("datakategori", categories);
+        // Product count
         model.addAttribute("productCounts", productCounts);
+
+        model.addAttribute("tes", ptes);
 
         return "shop";
     }
@@ -70,11 +76,9 @@ public class ShopController {
                 String[] keyValue = param.split("=");
 
                 if( keyValue.length == 2){
-                    try {
-                        String key = URLDecoder.decode(keyValue[0], "UTF-8");
-                        String value = URLDecoder.decode(keyValue[1], "UTF-8");
-                        queryParams.put(key, value);
-                    }catch (UnsupportedEncodingException e){}
+                    String key = URLDecoder.decode(keyValue[0], StandardCharsets.UTF_8);
+                    String value = URLDecoder.decode(keyValue[1], StandardCharsets.UTF_8);
+                    queryParams.put(key, value);
                 }
             }
         }

@@ -29,8 +29,7 @@
 </head>
 <body>
 
-<!--<div th:text="${srcBarangEmpty}"></div>-->
-
+<div th:text="${tes}"></div>
 
 <div th:replace="~{components/navbar.html :: navbar}"></div>
 
@@ -92,9 +91,9 @@
             </div>
         </div>
 
-        <div class="content-shop" th:classappend="${databarang.isEmpty() && srcBarangEmpty} ? 'content-shop-1r' : ''">
+        <div class="content-shop" th:classappend="${databarang.isEmpty() && filterEmpty} ? 'content-shop-1r' : ''">
 
-            <div th:if="${databarang.isEmpty() && srcBarangEmpty}" class="box-animNoResult">
+            <div th:if="${databarang.isEmpty() && filterEmpty}" class="box-animNoResult">
                 <div id="animNoResult" data-lnkAnim="/js/animated/noResult.json"></div>
                 <p>
                     <span class="text">tidak ada hasil</span>
@@ -102,7 +101,7 @@
                 </p>
             </div>
 
-            <div th:unless="${databarang.isEmpty() && srcBarangEmpty}" class="box-product" id="box-product" th:each="d : ${databarang}">
+            <div th:unless="${databarang.isEmpty() && filterEmpty}" class="box-product" id="box-product" th:each="d : ${databarang}">
                 <div class="sell-box-bg">
                     <a href="/shop/detail-product/namaproduk">
                         <img th:src="${d.gambar_url}" class="bg">
