@@ -222,10 +222,76 @@ main.shop .content-shop-1row {
   grid-template-columns: 1fr !important;
 }
 
+main.shop .content-shop .box-bg {
+  width: 100%;
+  height: 300px;
+  position: relative;
+  overflow: hidden;
+}
+
+main.shop .box-product {
+  width: 100%;
+  height: -webkit-max-content;
+  height: max-content;
+  position: relative;
+}
+
 main.shop .sell-box-bg {
   height: 200px;
   overflow: hidden;
   position: relative;
+}
+
+main.shop .box-product div.bg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-position: 50% 50%;
+  background-size: cover;
+  transition: var(--setengah);
+}
+
+main.shop .box-product div.bg:hover {
+  filter: grayscale(100%);
+}
+
+main.shop .box-product .to-cart {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+main.shop .box-product .to-cart button {
+  width: 100%;
+  border: 0;
+  color: var(--white);
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  padding: 10px;
+  background-color: var(--black04);
+  transform: translateY(100%);
+  transition: var(--setengah);
+}
+
+main.shop .box-product .to-cart:hover button {
+  background-color: var(--black06);
+}
+
+main.shop .box-product:hover button {
+  transform: translateY(0);
+}
+
+main.shop .box-product .text p {
+  margin: 0.8rem 0 0 0;
+}
+
+main.shop .box-product .text p:nth-child(3) {
+  color: var(--red);
+  font-size: 0.9rem;
+  font-weight: 800;
 }
 
 /*---------------------------------------------ANIM NO RESULT---------------------------------------------*/

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Perabot.shop</title>
+
+    <!-- ICON HEAD -->
+    <link rel="icon" href="/image/icon/logo.svg">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/auth.css">
+    <link rel="stylesheet" href="/css/component.css">
+    <link rel="stylesheet" href="/css/responsive.css">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="/font/fontawesome/css/all.css">
+
+    <!-- FONT GOOGLE -->
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Josefin+Sans:100,200,300,400,500,600,700,800,900|Montserrat:100,200,300,400,500,600,700,800,900">
+
+
+</head>
+
+<body>
+
+<div th:replace="~{components/navbar.html :: navbar}"></div>
+
+<main class="auth">
+    <div class="header">
+        <img src="/image/bg/bg-auth.jpg">
+        <div class="text">
+            <p class="montserrat">Autentikasi</p>
+        </div>
+    </div>
+    <div class="content section">
+        <div class="box-form">
+            <div class="login">
+                <form>
+                    <p class="head-form">Masuk</p>
+
+                    <label for="username-login">nama pengguna / email <span class="required">*</span></label>
+                    <div class="box-input">
+                        <input class="montserrat" type="text" name="" id="username-login" autocomplete="off">
+                    </div>
+
+                    <label for="pass-login">kata sandi <span class="required">*</span></label>
+                    <div class="box-input">
+                        <input class="montserrat" type="password" name="" id="pass-login"
+                               autocomplete="current-password">
+                        <i class="fas fa-eye-slash" id="eye"></i>
+                    </div>
+
+                    <div class="last">
+                        <button type="submit" class="montserrat cursor-pointer-custom">login</button>
+                        <div class="remember">
+                            <input class="montserrat" type="checkbox" name="" id="remember">
+                            <label for="remember">remember me</label>
+                        </div>
+                    </div>
+                </form>
+                <a href="" class="forgot-pass">Forgot password?</a>
+            </div>
+
+            <div class="register">
+                <form>
+                    <p class="head-form">Daftar</p>
+
+<!--                    <div class="alert alert-w">Hello world</div>-->
+
+                    <label for="username-regis">nama pengguna <span class="required">*</span></label>
+                    <div class="box-input">
+                        <input class="montserrat" type="text" name="" id="username-regis" autocomplete="off">
+                    </div>
+
+                    <label for="email">email <span class="required">*</span></label>
+                    <div class="box-input">
+                        <input class="montserrat" type="text" name="" id="email" autocomplete="off">
+                    </div>
+
+                    <label for="pass-regis">kata sandi <span class="required">*</span></label>
+                    <div class="box-input">
+                        <input class="montserrat" type="password" name="" id="pass-regis"
+                               autocomplete="current-password">
+                        <i class="fas fa-eye-slash" id="eye"></i>
+                    </div>
+
+                    <label for="pass2-regis">ulangi kata sandi <span class="required">*</span></label>
+                    <div class="box-input">
+                        <input class="montserrat" type="password" name="" id="pass2-regis"
+                               autocomplete="current-password">
+                        <i class="fas fa-eye-slash" id="eye"></i>
+                    </div>
+
+                    <p class="policy">Data pribadi anda akan digunakan untuk mendukung pengalaman anda di seluruh
+                        situs web ini. untuk mengelola akses ke akun Anda. dan untuk tujuan lain yang dijelaskan
+                        dalam <a href="">kebijakan privasi kami.</a></p>
+
+                    <button type="submit" class="montserrat cursor-pointer-custom">register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+
+<div th:replace="~{components/footer.html :: footer}"></div>
+
+<script src="/js/script.js"></script>
+<script src="/js/core/auth.js"></script>
+
+</body>
+
+</html>

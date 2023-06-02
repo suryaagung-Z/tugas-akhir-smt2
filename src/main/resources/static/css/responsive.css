@@ -20,6 +20,12 @@
     width: 150px;
   }
 
+  /*---------------------------------BEST SELLER---------------------------------*/
+  main.index .swiper-slide .to-cart button,
+  main.shop .box-product .to-cart button {
+    transform: translateY(0);
+  }
+
   /*---------------------------------DESKRIPSI---------------------------------*/
   main.index .deskripsi {
     grid-template-columns: 1fr 1fr;

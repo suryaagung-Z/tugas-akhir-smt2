@@ -10,16 +10,20 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URLDecoder;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
+import java.util.HashMap;
+import java.util.Map;
 
 @Service
-public class ImageService {
+public class Services {
 
     private final DbxClientV2 dropboxClient;
 
-    public ImageService(DbxClientV2 dropboxClient) {
+    public Services(DbxClientV2 dropboxClient) {
         this.dropboxClient = dropboxClient;
     }
 
@@ -55,5 +59,22 @@ public class ImageService {
             e.printStackTrace();
             throw new RuntimeException("Failed to upload image.");
         }
+    }
+
+    public Map<String, String> parseQueryParams(String queryString){
+        Map<String, String> queryParams = new HashMap<>();
+        if (queryString != null) {
+            String[] params = queryString.split("&");
+            for (String param : params) {
+                String[] keyValue = param.split("=");
+
+                if( keyValue.length == 2){
+                    String key = URLDecoder.decode(keyValue[0], StandardCharsets.UTF_8);
+                    String value = URLDecoder.decode(keyValue[1], StandardCharsets.UTF_8);
+                    queryParams.put(key, value);
+                }
+            }
+        }
+        return queryParams;
     }
 }

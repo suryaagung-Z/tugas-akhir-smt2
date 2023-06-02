@@ -37,13 +37,13 @@ if( (myAnim != null) || (myAnim != undefined) ){
 //----------------------------------------------------------------------PRICE SLIDER
 let myRange = document.getElementById('my-range');
 noUiSlider.create(myRange, {
-    start: [0, 5000000],
-    step: 100000,
+    start: [0, 10000000],
+    step: 50000,
     behaviour: 'drag',
     connect: true,
     range: {
         'min': 0,
-        'max': 5000000
+        'max': 10000000
     }
 });
 

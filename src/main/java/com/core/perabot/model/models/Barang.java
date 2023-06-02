@@ -14,8 +14,9 @@ public class Barang {
     @Column(name = "id_barang")
     private Long id_barang;
 
-    @Column(name = "id_kategori")
-    private  String id_kategori;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_kategori", referencedColumnName = "id_kategori")
+    private Kategori id_kategori;
 
     @Column(name = "id_admin")
     private  Long id_admin;
@@ -46,5 +47,7 @@ public class Barang {
     @Column(name = "status_aktif")
     private Boolean status_aktif;
 
+    @Column(name = "terjual")
+    private Integer terjual;
 }
 

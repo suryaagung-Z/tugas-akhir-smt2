@@ -12,6 +12,7 @@ public class Kategori {
 
     @Id
     @Column(name = "id_kategori")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id_kategori;
 
     @Column(name = "id_admin")
