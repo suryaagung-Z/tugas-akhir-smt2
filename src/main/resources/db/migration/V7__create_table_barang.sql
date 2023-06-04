@@ -10,6 +10,7 @@ CREATE TABLE IF NOT EXISTS barang (
     waktu_ditambahkan TIMESTAMP NOT NULL,
     terakhir_diperbarui TIMESTAMP NOT NULL,
     status_aktif BOOLEAN NOT NULL,
+    terjual INT NOT NULL,
     FOREIGN KEY (id_kategori)
     REFERENCES kategori (id_kategori),
     FOREIGN KEY (id_admin)

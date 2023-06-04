@@ -9,7 +9,8 @@ INSERT INTO
     gambar_url,
     waktu_ditambahkan,
     terakhir_diperbarui,
-    status_aktif
+    status_aktif,
+    terjual
 )
 VALUES
     (
@@ -40,7 +41,8 @@ VALUES
         'https://dl.dropboxusercontent.com/s/tn34i0ivk3ya0gn/Lemari10.png',
         '2023-05-26 17:37:45',
         '2023-05-26 17:37:45',
-        'TRUE'
+        'TRUE',
+     0
     ),
     (
         'LMR',
@@ -71,7 +73,8 @@ VALUES
         'https://dl.dropboxusercontent.com/s/2nbwa3g4ujb5ap1/lemari1.jpeg',
         '2023-05-27 17:37:45',
         '2023-05-27 17:37:45',
-        'TRUE'
+        'TRUE',
+     0
     ),
     (
         'LMR',
@@ -116,7 +119,8 @@ VALUES
         'https://dl.dropboxusercontent.com/s/i11v03jhv3hbmfj/Lemari14.jpeg',
         '2023-05-28 17:37:45',
         '2023-05-28 17:37:45',
-        'TRUE'
+        'TRUE',
+     0
     ),
     (
         'SFA',
@@ -143,7 +147,8 @@ VALUES
         'https://dl.dropboxusercontent.com/s/vlo1ze1k2uc1pu0/kursi-D0005.jpg',
         '2023-05-29 17:37:45',
         '2023-05-29 17:37:45',
-        'TRUE'
+        'TRUE',
+     0
     ),
     (
         'SFA',
@@ -167,7 +172,8 @@ VALUES
         'https://dl.dropboxusercontent.com/s/4izcxjiusytvhiq/kursi-D0004.jpg',
         '2023-05-30 17:37:45',
         '2023-05-30 17:37:45',
-        'TRUE'
+        'TRUE',
+     0
     ),
     (
         'SFA',
@@ -197,7 +203,8 @@ VALUES
         'https://dl.dropboxusercontent.com/s/mlyf0b9e28uqcaf/Kursi16.jpg',
         '2023-05-31 17:37:45',
         '2023-05-31 17:37:45',
-        'TRUE'
+        'TRUE',
+     0
     ),
     (
         'MJA',
@@ -224,7 +231,8 @@ VALUES
         'https://dl.dropboxusercontent.com/s/pu7t7367gynlw68/meja-D0001.jpg',
         '2023-06-01 17:37:45',
         '2023-06-01 17:37:45',
-        'TRUE'
+        'TRUE',
+     0
     ),
     (
         'MJA',
@@ -252,7 +260,8 @@ VALUES
         'https://dl.dropboxusercontent.com/s/wkffn0rontvw6lo/meja-D0003.jpg',
         '2023-06-02 17:37:45',
         '2023-06-02 17:37:45',
-        'TRUE'
+        'TRUE',
+     0
     ),
     (
         'MJA',
@@ -279,7 +288,8 @@ VALUES
         'https://dl.dropboxusercontent.com/s/dz42ynxkx7q4ika/Meja6.jpg',
         '2023-06-03 17:37:45',
         '2023-06-03 17:37:45',
-        'TRUE'
+        'TRUE',
+     0
     ),
     (
         'KSR',
@@ -309,7 +319,8 @@ VALUES
         'https://dl.dropboxusercontent.com/s/bnij2iibl1qvhto/Kasur4.jpg',
         '2023-06-04 17:37:45',
         '2023-06-04 17:37:45',
-        'TRUE'
+        'TRUE',
+     0
     ),
     (
         'SPR',
@@ -333,7 +344,8 @@ VALUES
         'https://dl.dropboxusercontent.com/s/0whq1a91c0rgzuk/Kasur11.jpeg',
         '2023-06-05 17:37:45',
         '2023-06-05 17:37:45',
-        'TRUE'
+        'TRUE',
+     0
     ),
     (
         'BTL',
@@ -359,7 +371,8 @@ VALUES
         'https://dl.dropboxusercontent.com/s/9hzap4jkvheuqiv/bantalbusaaa.jpg',
         '2023-06-06 17:37:45',
         '2023-06-06 17:37:45',
-        'TRUE'
+        'TRUE',
+     0
     ),
     (
         'ELT',
@@ -395,7 +408,8 @@ VALUES
         'https://dl.dropboxusercontent.com/s/hsyglkx4if9pcrh/Magicom1.jpeg',
         '2023-06-07 17:37:45',
         '2023-06-07 17:37:45',
-        'TRUE'
+        'TRUE',
+     0
     ),
     (
         'ELT',
@@ -437,7 +451,8 @@ VALUES
         'https://dl.dropboxusercontent.com/s/d0umxviyhpyq3s1/KipasAngin1.jpg',
         '2023-06-08 17:37:45',
         '2023-06-08 17:37:45',
-        'TRUE'
+        'TRUE',
+     0
     ),
     (
         'ELT',
@@ -491,7 +506,8 @@ VALUES
         'https://dl.dropboxusercontent.com/s/vlpp7so95xwjvsc/Setrikaan1.jpeg',
         '2023-06-09 17:37:45',
         '2023-06-09 17:37:45',
-        'TRUE'
+        'TRUE',
+     0
     ),
     (
         'DPR',
@@ -525,7 +541,8 @@ VALUES
         'https://dl.dropboxusercontent.com/s/0ee6c4peh15z42m/Kompor1.png',
         '2023-06-10 17:37:45',
         '2023-06-10 17:37:45',
-        'TRUE'
+        'TRUE',
+     0
     ),
     (
         'DPR',
@@ -569,7 +586,8 @@ VALUES
         'https://dl.dropboxusercontent.com/s/eyiqs0ehpr86w3j/Selangkompor.jpg',
         '2023-06-11 17:37:45',
         '2023-06-11 17:37:45',
-        'TRUE'
+        'TRUE',
+     0
     ),
     (
         'DPR',
@@ -589,7 +607,8 @@ VALUES
         'https://dl.dropboxusercontent.com/s/v5vez3ty7h3al19/kuali.jpg',
         '2023-06-12 17:37:45',
         '2023-06-12 17:37:45',
-        'TRUE'
+        'TRUE',
+     0
     ),
     (
         'KRS',
@@ -640,7 +659,8 @@ VALUES
         'https://dl.dropboxusercontent.com/s/pifo4u2hmymi3qb/Kursi15.jpg',
         '2023-06-13 17:37:45',
         '2023-06-13 17:37:45',
-        'TRUE'
+        'TRUE',
+     0
     ),
     (
         'KRS',
@@ -666,7 +686,8 @@ VALUES
         'https://dl.dropboxusercontent.com/s/01e1act0w4phrg9/Kursi22.jpeg',
         '2023-06-14 17:37:45',
         '2023-06-14 17:37:45',
-        'TRUE'
+        'TRUE',
+     0
     ),
     (
         'KRS',
@@ -692,7 +713,8 @@ VALUES
         'https://dl.dropboxusercontent.com/s/6942q89pwlu777v/Kursi7.jpg',
         '2023-06-15 17:37:45',
         '2023-06-15 17:37:45',
-        'TRUE'
+        'TRUE',
+     0
     ),
     (
         'SPR',
@@ -719,7 +741,8 @@ VALUES
         'https://dl.dropboxusercontent.com/s/lez82kbqamt0fl5/kasur-D0004.jpg',
         '2023-06-16 17:37:45',
         '2023-06-16 17:37:45',
-        'TRUE'
+        'TRUE',
+     0
     ),
     (
         'SPR',
@@ -759,7 +782,8 @@ VALUES
         'https://dl.dropboxusercontent.com/s/xgml5lgj7rhnybt/Kasur5.jpg',
         '2023-06-17 17:37:45',
         '2023-06-17 17:37:45',
-        'TRUE'
+        'TRUE',
+     0
     ),
     (
         'KSR',
@@ -783,7 +807,8 @@ VALUES
         'https://dl.dropboxusercontent.com/s/joc8iwzgyy7bz09/Kasur1.jpg',
         '2023-06-18 17:37:45',
         '2023-06-18 17:37:45',
-        'TRUE'
+        'TRUE',
+     0
     ),
     (
         'KSR',
@@ -809,7 +834,8 @@ VALUES
         'https://dl.dropboxusercontent.com/s/6gq6oob3c7g0235/Kasur9.jpg',
         '2023-06-19 17:37:45',
         '2023-06-19 17:37:45',
-        'TRUE'
+        'TRUE',
+     0
     ),
     (
         'BTL',
@@ -832,7 +858,8 @@ VALUES
         'https://dl.dropboxusercontent.com/s/7ddpxamdpw7ysui/bantalkapuk.jpg',
         '2023-06-20 17:37:45',
         '2023-06-20 17:37:45',
-        'TRUE'
+        'TRUE',
+     0
     ),
     (
         'ELT',
@@ -872,7 +899,8 @@ VALUES
         'https://dl.dropboxusercontent.com/s/n4eckm929qsf4yu/Mixer1.jpeg',
         '2023-06-22 17:37:45',
         '2023-06-22 17:37:45',
-        'TRUE'
+        'TRUE',
+     0
     ),
     (
         'MJA',
@@ -898,5 +926,6 @@ VALUES
         'https://dl.dropboxusercontent.com/s/niguzn9lw7t4649/Meja11.jpg',
         '2023-06-23 17:37:45',
         '2023-06-23 17:37:45',
-        'TRUE'
+        'TRUE',
+     0
     );
