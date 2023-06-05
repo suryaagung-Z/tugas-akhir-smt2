@@ -34,7 +34,7 @@ public class ShopController {
         // Dapatkan semua query param
         Map<String, String> queryParams = services.parseQueryParams(req.getQueryString());
         // Dapatkan semua produk beserta kategori
-        Specification<Barang> joinKategori = BarangSpecifications.barangBesertaKategori();
+        Specification<Barang> joinKategori = BarangSpecifications.barangBesertaKategori("user");
         List<Barang> products = barangRepository.findAll(joinKategori);
         //
         List<Kategori> categories = kategoriRepository.findAll();

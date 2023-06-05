@@ -19,7 +19,7 @@ public class Barang {
     private Kategori id_kategori;
 
     @Column(name = "id_admin")
-    private  Long id_admin;
+    private Long id_admin;
 
     @Column(name = "nama_barang")
     private String nama_barang;

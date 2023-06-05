@@ -6,6 +6,4 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Query;
 
 public interface BarangRepository extends JpaRepository <Barang, Long>, JpaSpecificationExecutor<Barang> {
-//    @Query(":bind")
-//    tipe namafungsi(String bind);
 }

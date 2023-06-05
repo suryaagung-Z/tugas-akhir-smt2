@@ -42,7 +42,7 @@ VALUES
         '2023-05-26 17:37:45',
         '2023-05-26 17:37:45',
         'TRUE',
-     0
+        0
     ),
     (
         'LMR',
@@ -74,7 +74,7 @@ VALUES
         '2023-05-27 17:37:45',
         '2023-05-27 17:37:45',
         'TRUE',
-     0
+        0
     ),
     (
         'LMR',
@@ -120,10 +120,10 @@ VALUES
         '2023-05-28 17:37:45',
         '2023-05-28 17:37:45',
         'TRUE',
-     0
+        0
     ),
     (
-        'SFA',
+        'KRS',
         '1',
         'Sofa Camelback',
         'SOFA CAMELBACK
@@ -148,10 +148,10 @@ VALUES
         '2023-05-29 17:37:45',
         '2023-05-29 17:37:45',
         'TRUE',
-     0
+        0
     ),
     (
-        'SFA',
+        'KRS',
         '1',
         'Sofa Bed',
         'SOFA BED
@@ -173,10 +173,10 @@ VALUES
         '2023-05-30 17:37:45',
         '2023-05-30 17:37:45',
         'TRUE',
-     0
+        0
     ),
     (
-        'SFA',
+        'KRS',
         '1',
         'Sofa Chesterfield',
         'SOFA CHESTERFIELD
@@ -204,7 +204,7 @@ VALUES
         '2023-05-31 17:37:45',
         '2023-05-31 17:37:45',
         'TRUE',
-     0
+        0
     ),
     (
         'MJA',
@@ -232,7 +232,7 @@ VALUES
         '2023-06-01 17:37:45',
         '2023-06-01 17:37:45',
         'TRUE',
-     0
+        0
     ),
     (
         'MJA',
@@ -261,7 +261,7 @@ VALUES
         '2023-06-02 17:37:45',
         '2023-06-02 17:37:45',
         'TRUE',
-     0
+        0
     ),
     (
         'MJA',
@@ -289,10 +289,10 @@ VALUES
         '2023-06-03 17:37:45',
         '2023-06-03 17:37:45',
         'TRUE',
-     0
+        0
     ),
     (
-        'KSR',
+        'TDR',
         '1',
         'Kasur Busa',
         'Spesifikasi kasur busa (foam mattress) untuk ukuran single bed (ukuran satu orang) dan double bed (ukuran dua orang) dapat bervariasi tergantung pada merek dan produsen. Namun, berikut adalah beberapa spesifikasi umum yang dapat Anda pertimbangkan:
@@ -320,10 +320,10 @@ VALUES
         '2023-06-04 17:37:45',
         '2023-06-04 17:37:45',
         'TRUE',
-     0
+        0
     ),
     (
-        'SPR',
+        'TDR',
         '1',
         'Spring Bed Dorong',
         'Kasur twin bed tingkat dorong adalah jenis kasur yang memiliki dua tempat tidur berukuran twin (ukuran kasur tunggal) yang disusun secara vertikal, dengan kasur yang berada di atasnya dapat digeser atau didorong untuk mengakses kasur yang berada di bawahnya. Meskipun saya tidak memiliki informasi terkini tentang produk-produk spesifik yang tersedia di pasar saat ini, berikut adalah spesifikasi kasur twin bed tingkat dorong:
@@ -345,10 +345,10 @@ VALUES
         '2023-06-05 17:37:45',
         '2023-06-05 17:37:45',
         'TRUE',
-     0
+        0
     ),
     (
-        'BTL',
+        'TDR',
         '1',
         'Bantal Busa',
         'Berikut adalah spesifikasi bantal busa:
@@ -372,7 +372,7 @@ VALUES
         '2023-06-06 17:37:45',
         '2023-06-06 17:37:45',
         'TRUE',
-     0
+        0
     ),
     (
         'ELT',
@@ -409,7 +409,7 @@ VALUES
         '2023-06-07 17:37:45',
         '2023-06-07 17:37:45',
         'TRUE',
-     0
+        0
     ),
     (
         'ELT',
@@ -452,7 +452,7 @@ VALUES
         '2023-06-08 17:37:45',
         '2023-06-08 17:37:45',
         'TRUE',
-     0
+        0
     ),
     (
         'ELT',
@@ -507,7 +507,7 @@ VALUES
         '2023-06-09 17:37:45',
         '2023-06-09 17:37:45',
         'TRUE',
-     0
+        0
     ),
     (
         'DPR',
@@ -542,7 +542,7 @@ VALUES
         '2023-06-10 17:37:45',
         '2023-06-10 17:37:45',
         'TRUE',
-     0
+        0
     ),
     (
         'DPR',
@@ -587,7 +587,7 @@ VALUES
         '2023-06-11 17:37:45',
         '2023-06-11 17:37:45',
         'TRUE',
-     0
+        0
     ),
     (
         'DPR',
@@ -608,7 +608,7 @@ VALUES
         '2023-06-12 17:37:45',
         '2023-06-12 17:37:45',
         'TRUE',
-     0
+        0
     ),
     (
         'KRS',
@@ -660,7 +660,7 @@ VALUES
         '2023-06-13 17:37:45',
         '2023-06-13 17:37:45',
         'TRUE',
-     0
+        0
     ),
     (
         'KRS',
@@ -687,7 +687,7 @@ VALUES
         '2023-06-14 17:37:45',
         '2023-06-14 17:37:45',
         'TRUE',
-     0
+        0
     ),
     (
         'KRS',
@@ -714,10 +714,10 @@ VALUES
         '2023-06-15 17:37:45',
         '2023-06-15 17:37:45',
         'TRUE',
-     0
+        0
     ),
     (
-        'SPR',
+        'TDR',
         '2',
         'Springbed set',
         '"Spesifikasi set kasur springbed :
@@ -742,10 +742,10 @@ VALUES
         '2023-06-16 17:37:45',
         '2023-06-16 17:37:45',
         'TRUE',
-     0
+        0
     ),
     (
-        'SPR',
+        'TDR',
         '2',
         'Matras',
         '"Spesifikasi matras :
@@ -783,10 +783,10 @@ VALUES
         '2023-06-17 17:37:45',
         '2023-06-17 17:37:45',
         'TRUE',
-     0
+        0
     ),
     (
-        'KSR',
+        'TDR',
         '2',
         'Kasur Kapuk atau Kapas',
         '"Kasur kapuk ukuran tunggal, adalah kasur dengan ukuran yang sesuai untuk satu orang. Berikut adalah beberapa spesifikasi umum yang dapat ditemukan pada kasur kapuk single bed:
@@ -808,10 +808,10 @@ VALUES
         '2023-06-18 17:37:45',
         '2023-06-18 17:37:45',
         'TRUE',
-     0
+        0
     ),
     (
-        'KSR',
+        'TDR',
         '2',
         'Kasur Santai',
         '"Kasur santai, juga dikenal sebagai kasur lipat atau kasur tatami, adalah perabotan yang nyaman untuk bersantai, beristirahat, atau tidur. Berikut adalah spesifikasi kasur santai:
@@ -835,10 +835,10 @@ VALUES
         '2023-06-19 17:37:45',
         '2023-06-19 17:37:45',
         'TRUE',
-     0
+        0
     ),
     (
-        'BTL',
+        'TDR',
         '2',
         'Bantal Kapuk atau Kapas',
         '"Berikut adalah spesifikasi bantal kapuk atau kapas:
@@ -859,7 +859,7 @@ VALUES
         '2023-06-20 17:37:45',
         '2023-06-20 17:37:45',
         'TRUE',
-     0
+        0
     ),
     (
         'ELT',
@@ -900,7 +900,7 @@ VALUES
         '2023-06-22 17:37:45',
         '2023-06-22 17:37:45',
         'TRUE',
-     0
+        0
     ),
     (
         'MJA',
@@ -927,5 +927,5 @@ VALUES
         '2023-06-23 17:37:45',
         '2023-06-23 17:37:45',
         'TRUE',
-     0
+        0
     );

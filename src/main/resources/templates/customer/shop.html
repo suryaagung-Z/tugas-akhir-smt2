@@ -57,7 +57,7 @@
                 <ul>
                     <!--Category-->
                     <li th:each="kategori,iterKategori : ${datakategori}">
-                        <a id="filterCategory" th:text="${kategori.nama_kategori}" th:data-idbarang="${kategori.id_kategori}"></a> &nbsp;
+                        <a id="filterCategory" th:text="${kategori.getNama_kategori()}" th:data-idbarang="${kategori.getId_kategori()}"></a> &nbsp;
                         <span class="total" th:text="'(' + ${productCounts[iterKategori.index]} + ')'">&nbsp</span>
                     </li>
                 </ul>
@@ -105,7 +105,7 @@
             <div th:unless="${databarang.isEmpty() && filterEmpty}" class="box-product" id="box-product" th:each="d : ${databarang}">
                 <div class="sell-box-bg">
                     <a href="/shop/detail-product/namaproduk">
-                        <img th:src="${d.gambar_url}" class="bg">
+                        <img th:src="${d.getGambar_url()}" class="bg">
                     </a>
                     <div class="to-cart">
                         <button type="submit" class="cursor-pointer-custom josefin">tambah ke keranjang</button>
@@ -120,11 +120,11 @@
                     </div>
                 </div>
                 <div class="text" id="textP" data-P="0|1" data-ctg="kategori">
-                    <p class="sellCategory" th:text="${d.id_kategori.nama_kategori}"></p>
-                    <div id="sellName" th:text="${d.nama_barang}"></div>
+                    <p class="sellCategory" th:text="${d.id_kategori.getNama_kategori()}"></p>
+                    <div id="sellName" th:text="${d.getNama_barang()}"></div>
                     <div class="btb">
-                        <p class="sellPrice">Rp <span id="priceNum" th:text="${d.harga}"></span></p>
-                        <p class="Psold" th:text="${d.stok} ? 'Tersedia' : 'Kosong'"></p>
+                        <p class="sellPrice">Rp <span id="priceNum" th:text="${d.getHarga()}"></span></p>
+                        <p class="Psold" th:text="${d.getStok()} ? 'Tersedia' : 'Kosong'"></p>
                     </div>
                 </div>
             </div>

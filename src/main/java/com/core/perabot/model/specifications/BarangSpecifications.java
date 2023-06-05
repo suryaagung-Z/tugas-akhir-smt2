@@ -2,17 +2,25 @@ package com.core.perabot.model.specifications;
 
 import com.core.perabot.model.models.Barang;
 import com.core.perabot.model.models.Kategori;
-import jakarta.persistence.criteria.Expression;
 import jakarta.persistence.criteria.Join;
 import jakarta.persistence.criteria.JoinType;
-import jakarta.persistence.criteria.Predicate;
 import org.springframework.data.jpa.domain.Specification;
 
 public class BarangSpecifications {
-    public static Specification<Barang> barangBesertaKategori(){
+    public static Specification<Barang> barangBesertaKategori(String access){
         return (root, query, criteriaBuilder) -> {
-            Join<Barang, Kategori> joinKategori = root.join("id_kategori", JoinType.LEFT);
+            Join<Barang, Kategori> joinKategori = root.join("id_kategori", JoinType.INNER);
+            if(access == "user"){
+                return criteriaBuilder.isTrue(root.get("status_aktif"));
+            }
             return null;
+        };
+    }
+
+    public static Specification<Barang> barangBesertaKategoriByidbarang(Long id){
+        return (root, query, criteriaBuilder) -> {
+            Join<Barang, Kategori> joinKategori = root.join("id_kategori", JoinType.INNER);
+            return criteriaBuilder.equal(root.get("id_barang"), id);
         };
     }
 
@@ -59,7 +67,7 @@ public class BarangSpecifications {
           if(bestSeller){
               query.orderBy(criteriaBuilder.asc(root.get("terjual")));
           }
-          return null;
+          return criteriaBuilder.conjunction();
         };
     }
 
@@ -68,7 +76,7 @@ public class BarangSpecifications {
             if(latest){
                 query.orderBy(criteriaBuilder.asc(root.get("id_barang")));
             }
-            return null;
+            return criteriaBuilder.conjunction();
         };
     }
 
@@ -77,7 +85,7 @@ public class BarangSpecifications {
             if(lowToHigh){
                 query.orderBy(criteriaBuilder.asc(root.get("harga")));
             }
-            return null;
+            return criteriaBuilder.conjunction();
         };
     }
 
@@ -86,8 +94,42 @@ public class BarangSpecifications {
             if(highToLow){
                 query.orderBy(criteriaBuilder.desc(root.get("harga")));
             }
-            return null;
+            return criteriaBuilder.conjunction();
         };
     }
 
 }
+
+// ========================================================================================
+// CONTOH 1 :
+
+// query.orderBy(criteriaBuilder.asc(root.get("nama_barang")));
+// Kira-kira bentuk query :
+// SELECT ...
+// FROM ...
+// WHERE ...
+// ORDER BY nama_barang ASC
+
+// criteriaBuilder.between(root.get("harga"), 100, 200);
+// Kira-kira bentuk query :
+// SELECT ...
+// FROM ...
+// WHERE harga BETWEEN 100 AND 200
+
+// ========================================================================================
+// CONTOH 2 : Penggunaan pada controller
+
+//Specification<Barang> spec = joinKategori.and(BarangSpecifications.cariBarangByKategori(ctg))
+//        .and(BarangSpecifications.cariByNamaBarang(src)) -> aktif
+//        .and(BarangSpecifications.cariByBetweenHarga(priceParse)) -> aktif
+//        .and(BarangSpecifications.cariByTerlaris(bestSeller))
+//        .and(BarangSpecifications.cariByTerbaru(latest))
+//        .and(BarangSpecifications.hargaRendahKeTinggi(lowToHigh)) -> aktif
+//        .and(BarangSpecifications.hargaTinggiKeRendah(highToLow));
+// Kira-kira bentuk query :
+// SELECT ...
+// FROM Barang
+// WHERE LOWER(nama_barang) LIKE '%<nama_barang>%'
+//     AND harga BETWEEN <harga_min> AND <harga_max>
+// ORDER BY harga ASC
+

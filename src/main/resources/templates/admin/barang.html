@@ -5,7 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Daftar Kategori</title>
+    <title>Daftar Barang</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="/admin/vendors/feather/feather.css">
     <link rel="stylesheet" href="/admin/vendors/mdi/css/materialdesignicons.min.css">
@@ -202,7 +202,13 @@
         <div th:replace="~{admin/components/navside.html::navside}"></div>
         <!-- partial -->
         <div class="main-panel">
+            <div th:text="${tes}"></div>
+            <div th:text="${tes2}"></div>
+
             <div class="content-wrapper">
+                <div class="alert alert-success" th:classappend="${trueMessage == null} ? 'd-none' : 'd-block'" role="alert" th:text="${trueMessage}"></div>
+                <div class="alert alert-danger" th:classappend="${falseMessage == null} ? 'd-none' : 'd-block'" role="alert" th:text="${falseMessage}"></div>
+
                 <div class="row">
                     <div class="col-lg-12 grid-margin stretch-card">
                         <div class="card">
@@ -211,29 +217,38 @@
                                 <p class="card-description">
                                     Berikut adalah daftar semua<code>kategori</code>yang anda miliki
                                 </p>
+                                <a class="btn btn-primary btn-rounded btn-fw mb-2" href="/admin/addbarang">Tambah Barang</a>
                                 <div class="table-responsive">
                                     <table class="table table-striped">
                                         <thead>
                                         <tr>
                                             <th>No</th>
                                             <th>Foto</th>
+                                            <th>Kategori</th>
                                             <th>Nama</th>
-                                            <th>Ditambahkan</th>
+                                            <th>Harga</th>
                                             <th>Aksi</th>
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <tr th:each="k, i : ${kategori}">
+                                        <tr th:each="b, i : ${barang}">
                                             <td th:text="${i.count}"></td>
-                                            <td class="py-1">
-                                                <img th:src="${k.getGambar_url()}" alt="image"/>
+                                            <td class="py-1" style="white-space: normal; line-height: 180%;">
+                                                <img th:src="${b.getGambar_url()}" alt="image" style="width: 50px; height: 50px; object-fit: cover;"/>
                                             </td>
-                                            <td th:text="${k.getNama_kategori()}"></td>
-                                            <td th:text="${k.getWaktu_ditambahkan()}"></td>
-                                            <td>
-                                                <div class="d-flex flex-column gap-1">
-                                                    <a class="btn btn-sm btn-success btn-rounded btn-fw" href="/admin">Perbarui</a>
-                                                    <a class="btn btn-sm btn-danger btn-rounded btn-fw" href="/admin">Hapus</a>
+                                            <td th:text="${b.getId_kategori().getNama_kategori()}" style="white-space: normal;"></td>
+                                            <td style="white-space: normal; line-height: 180%;">
+                                                <a th:text="${b.getNama_barang()}" th:href="${'/admin/barang/' + b.getId_barang()}"></a>
+                                            </td>
+                                            <td th:text="${b.getHarga()}" style="white-space: normal; line-height: 180%;"></td>
+                                            <td style="white-space: normal; line-height: 180%;">
+                                                <div class="d-flex gap-1">
+                                                    <a class="btn btn-sm btn-success btn-rounded btn-fw" th:href="${'/admin/updatebarang/' + b.getId_barang()}" style="width: max-content; font-size: 1.2rem; padding: 5px 10px;">
+                                                        <span class="mdi mdi-pencil-box"></span>
+                                                    </a>
+                                                    <a class="btn btn-sm btn-danger btn-rounded btn-fw" href="/admin" style="width: max-content; font-size: 1.2rem; padding: 5px 10px;">
+                                                        <span class="mdi mdi-trash-can-outline"></span>
+                                                    </a>
                                                 </div>
                                             </td>
                                         </tr>
