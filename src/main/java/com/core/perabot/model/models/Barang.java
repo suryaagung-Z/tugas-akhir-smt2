@@ -1,6 +1,7 @@
 package com.core.perabot.model.models;
 
 import jakarta.persistence.*;
+import jdk.jfr.Timestamp;
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -36,11 +37,11 @@ public class Barang {
     @Column(name = "gambar_url")
     private String gambar_url;
 
-    @CreationTimestamp
+    @Timestamp
     @Column (name = "waktu_ditambahkan")
     private String waktu_ditambahkan;
 
-    @UpdateTimestamp
+    @Timestamp
     @Column (name = "terakhir_diperbarui")
     private String terakhir_diperbarui;
 

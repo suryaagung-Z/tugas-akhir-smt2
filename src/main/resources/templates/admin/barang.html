@@ -221,37 +221,37 @@
                                 <div class="table-responsive">
                                     <table class="table table-striped">
                                         <thead>
-                                        <tr>
-                                            <th>No</th>
-                                            <th>Foto</th>
-                                            <th>Kategori</th>
-                                            <th>Nama</th>
-                                            <th>Harga</th>
-                                            <th>Aksi</th>
-                                        </tr>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Foto</th>
+                                                <th>Kategori</th>
+                                                <th>Nama</th>
+                                                <th>Harga</th>
+                                                <th>Aksi</th>
+                                            </tr>
                                         </thead>
                                         <tbody>
-                                        <tr th:each="b, i : ${barang}">
-                                            <td th:text="${i.count}"></td>
-                                            <td class="py-1" style="white-space: normal; line-height: 180%;">
-                                                <img th:src="${b.getGambar_url()}" alt="image" style="width: 50px; height: 50px; object-fit: cover;"/>
-                                            </td>
-                                            <td th:text="${b.getId_kategori().getNama_kategori()}" style="white-space: normal;"></td>
-                                            <td style="white-space: normal; line-height: 180%;">
-                                                <a th:text="${b.getNama_barang()}" th:href="${'/admin/barang/' + b.getId_barang()}"></a>
-                                            </td>
-                                            <td th:text="${b.getHarga()}" style="white-space: normal; line-height: 180%;"></td>
-                                            <td style="white-space: normal; line-height: 180%;">
-                                                <div class="d-flex gap-1">
-                                                    <a class="btn btn-sm btn-success btn-rounded btn-fw" th:href="${'/admin/updatebarang/' + b.getId_barang()}" style="width: max-content; font-size: 1.2rem; padding: 5px 10px;">
-                                                        <span class="mdi mdi-pencil-box"></span>
-                                                    </a>
-                                                    <a class="btn btn-sm btn-danger btn-rounded btn-fw" href="/admin" style="width: max-content; font-size: 1.2rem; padding: 5px 10px;">
-                                                        <span class="mdi mdi-trash-can-outline"></span>
-                                                    </a>
-                                                </div>
-                                            </td>
-                                        </tr>
+                                            <tr th:each="b, i : ${barang}">
+                                                <td th:text="${i.count}"></td>
+                                                <td class="py-1" style="white-space: normal; line-height: 180%;">
+                                                    <img th:src="${b.getGambar_url()}" alt="image" style="width: 50px; height: 50px; object-fit: cover;"/>
+                                                </td>
+                                                <td th:text="${b.getId_kategori().getNama_kategori()}" style="white-space: normal;"></td>
+                                                <td style="white-space: normal; line-height: 180%;">
+                                                    <a th:text="${b.getNama_barang()}" th:href="${'/admin/barang/' + b.getId_barang()}"></a>
+                                                </td>
+                                                <td th:text="${b.getHarga()}" style="white-space: normal; line-height: 180%;"></td>
+                                                <td style="white-space: normal; line-height: 180%;">
+                                                    <div class="d-flex gap-1">
+                                                        <a class="btn btn-sm btn-success btn-rounded btn-fw" th:href="${'/admin/updatebarang/' + b.getId_barang()}" style="width: max-content; font-size: 1.2rem; padding: 5px 10px;">
+                                                            <span class="mdi mdi-pencil-box"></span>
+                                                        </a>
+                                                        <a class="btn btn-sm btn-danger btn-rounded btn-fw" id="deletebarang" th:href="${'/admin/deletebarang/' + b.getId_barang()}" style="width: max-content; font-size: 1.2rem; padding: 5px 10px;">
+                                                            <span class="mdi mdi-trash-can-outline"></span>
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
                                         </tbody>
                                     </table>
                                 </div>
@@ -272,10 +272,9 @@
 <!-- container-scroller -->
 <!-- plugins:js -->
 <script src="/admin/vendors/js/vendor.bundle.base.js"></script>
-<!-- endinject -->
-<!-- Plugin js for this page -->
 <script src="/admin/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
-<!-- End plugin js for this page -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- endplugins -->
 <!-- inject:js -->
 <script src="/admin/js/off-canvas.js"></script>
 <script src="/admin/js/hoverable-collapse.js"></script>
@@ -284,6 +283,30 @@
 <script src="/admin/js/todolist.js"></script>
 <!-- endinject -->
 <!-- Custom js for this page-->
+<script>
+    const delBarang = document.querySelectorAll("a#deletebarang");
+    delBarang.forEach((val)=>{
+        val.addEventListener("click", (e)=>{
+            e.preventDefault();
+            const href = val.getAttribute("href");
+
+            Swal.fire({
+                title: 'Hapus barang ?',
+                text: "Anda tidak akan bisa mengembalikan ini!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                cancelButtonText: "Batal",
+                confirmButtonText: 'Hapus'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = href;
+                }
+            })
+        });
+    });
+</script>
 <!-- End custom js for this page-->
 </body>
 

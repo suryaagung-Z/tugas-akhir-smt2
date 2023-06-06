@@ -218,6 +218,7 @@
                                             <th>No</th>
                                             <th>Foto</th>
                                             <th>Nama</th>
+                                            <th>Jumlah Produk</th>
                                             <th>Ditambahkan</th>
                                             <th>Aksi</th>
                                         </tr>
@@ -229,11 +230,16 @@
                                                 <img th:src="${k.getGambar_url()}" alt="image"/>
                                             </td>
                                             <td th:text="${k.getNama_kategori()}"></td>
+                                            <td th:text="${productCounts[i.index]}"></td>
                                             <td th:text="${k.getWaktu_ditambahkan()}"></td>
-                                            <td>
-                                                <div class="d-flex flex-column gap-1">
-                                                    <a class="btn btn-sm btn-success btn-rounded btn-fw" href="/admin">Perbarui</a>
-                                                    <a class="btn btn-sm btn-danger btn-rounded btn-fw" href="/admin">Hapus</a>
+                                            <td style="white-space: normal; line-height: 180%;">
+                                                <div class="d-flex gap-1">
+                                                    <a class="btn btn-sm btn-success btn-rounded btn-fw" href="/admin/kategori" style="width: max-content; font-size: 1.2rem; padding: 5px 10px;">
+                                                        <span class="mdi mdi-pencil-box"></span>
+                                                    </a>
+                                                    <a class="btn btn-sm btn-danger btn-rounded btn-fw" id="deletebarang" href="/admin/kategori" style="width: max-content; font-size: 1.2rem; padding: 5px 10px;">
+                                                        <span class="mdi mdi-trash-can-outline"></span>
+                                                    </a>
                                                 </div>
                                             </td>
                                         </tr>
@@ -257,10 +263,10 @@
 <!-- container-scroller -->
 <!-- plugins:js -->
 <script src="/admin/vendors/js/vendor.bundle.base.js"></script>
-<!-- endinject -->
-<!-- Plugin js for this page -->
 <script src="/admin/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
-<!-- End plugin js for this page -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<!-- End plugin -->
 <!-- inject:js -->
 <script src="/admin/js/off-canvas.js"></script>
 <script src="/admin/js/hoverable-collapse.js"></script>
@@ -269,6 +275,30 @@
 <script src="/admin/js/todolist.js"></script>
 <!-- endinject -->
 <!-- Custom js for this page-->
+<script>
+    const delBarang = document.querySelectorAll("a#deletebarang");
+    delBarang.forEach((val)=>{
+        val.addEventListener("click", (e)=>{
+            e.preventDefault();
+            const href = val.getAttribute("href");
+
+            Swal.fire({
+                title: 'Hapus Kategori ?',
+                text: "Anda tidak akan bisa mengembalikan ini!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                cancelButtonText: "Batal",
+                confirmButtonText: 'Hapus'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = href;
+                }
+            })
+        });
+    });
+</script>
 <!-- End custom js for this page-->
 </body>
 

@@ -56,9 +56,9 @@
                 <p class="head-filter montserrat">Kategori <i class="far fa-times-circle cursor-pointer-custom"></i></p>
                 <ul>
                     <!--Category-->
-                    <li th:each="kategori,iterKategori : ${datakategori}">
+                    <li th:each="kategori,i : ${datakategori}">
                         <a id="filterCategory" th:text="${kategori.getNama_kategori()}" th:data-idbarang="${kategori.getId_kategori()}"></a> &nbsp;
-                        <span class="total" th:text="'(' + ${productCounts[iterKategori.index]} + ')'">&nbsp</span>
+                        <span class="total" th:text="'(' + ${productCounts[i.index]} + ')'">&nbsp</span>
                     </li>
                 </ul>
             </div>

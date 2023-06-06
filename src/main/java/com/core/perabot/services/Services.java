@@ -39,16 +39,14 @@ public class Services {
         this.dropboxClient = dropboxClient;
     }
 
-    public boolean isImageExists(String directory, String sourceFilename) {
+    public void isImageExists(String directory, String sourceFilename) {
         String filenameParse = this.filenameParse(sourceFilename);
         try {
-            Metadata metadata = dropboxClient.files().getMetadata(
+            dropboxClient.files().getMetadata(
                     "/" + this.pathRoot + "/" + directory + "/" + filenameParse
             );
-            return metadata != null;
         } catch (DbxException e) {
-            e.printStackTrace();
-            return false;
+            throw new RuntimeException(e);
         }
     }
 
@@ -70,34 +68,22 @@ public class Services {
             throw new RuntimeException(e);
         }
 
-        try {
-            // Membuat file sementara
-            Path tempFile = Files.createTempFile("temp", newFileName);
-            // Menyalin isi file ke file sementara
-            try (InputStream inputStream = new ByteArrayInputStream(fileData)) {
-                Files.copy(inputStream, tempFile, StandardCopyOption.REPLACE_EXISTING);
-            }
-            // Membaca isi file sementara
-            try (InputStream inputStream = new ByteArrayInputStream(Files.readAllBytes(tempFile))) {
-                // Mengunggah file ke Dropbox
-                FileMetadata metadata = dropboxClient.files().uploadBuilder("/" + this.pathRoot + "/" + directory + "/" + newFileName)
-                        .uploadAndFinish(inputStream);
-                // Membuat tautan berbagi untuk file yang diunggah
-                SharedLinkMetadata sharedLink = dropboxClient.sharing().createSharedLinkWithSettings(metadata.getPathLower());
+        // Membaca isi file sementara
+        try (InputStream inputStream = new ByteArrayInputStream(fileData)){
+            // Mengunggah file ke Dropbox
+            FileMetadata metadata = dropboxClient.files().uploadBuilder("/" + this.pathRoot + "/" + directory + "/" + newFileName)
+                    .uploadAndFinish(inputStream);
+            // Membuat tautan berbagi untuk file yang diunggah
+            SharedLinkMetadata sharedLink = dropboxClient.sharing().createSharedLinkWithSettings(metadata.getPathLower());
 
-                // Mendapatkan URL berbagi dan mengubahnya menjadi URL unduhan langsung
-                String sharedUrl = sharedLink.getUrl();
-                String directDownloadUrl = sharedUrl.replace("www.dropbox.com", "dl.dropboxusercontent.com");
-                directDownloadUrl = directDownloadUrl.replace("?dl=0", "");
+            // Mendapatkan URL berbagi dan mengubahnya menjadi URL unduhan langsung
+            String sharedUrl = sharedLink.getUrl();
+            String directDownloadUrl = sharedUrl.replace("www.dropbox.com", "dl.dropboxusercontent.com");
+            directDownloadUrl = directDownloadUrl.replace("?dl=0", "");
 
-                return directDownloadUrl;
-            } finally {
-                // Menghapus file sementara
-                Files.delete(tempFile);
-            }
+            return directDownloadUrl;
         } catch (DbxException | IOException e) {
-            e.printStackTrace();
-            return null;
+            throw new RuntimeException(e);
         }
     }
 
@@ -107,7 +93,6 @@ public class Services {
         try {
             dropboxClient.files().delete("/" + this.pathRoot + "/" + directory + "/" + filenameParse);
         } catch (DbxException e) {
-            e.printStackTrace();
             throw new RuntimeException(e);
         }
     }
@@ -119,9 +104,8 @@ public class Services {
             String sourcePath = "/" + this.pathRoot + "/" + sourceDirectory + "/" + filenameParse;
             String destinationPath = "/" + this.pathRoot + "/" + destinationDirectory + "/" + filenameParse;
 
-            Metadata metadata = dropboxClient.files().move(sourcePath, destinationPath);
+            dropboxClient.files().move(sourcePath, destinationPath);
         } catch (DbxException e) {
-            e.printStackTrace();
             throw new RuntimeException(e);
         }
     }

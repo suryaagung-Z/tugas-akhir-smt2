@@ -6,6 +6,7 @@ import com.core.perabot.model.repository.BarangRepository;
 import com.core.perabot.model.repository.KategoriRepository;
 import com.core.perabot.model.specifications.BarangSpecifications;
 import com.core.perabot.services.Services;
+import com.dropbox.core.DbxException;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -50,7 +51,7 @@ public class BarangController {
     }
 
     @GetMapping("/admin/barang/{id}")
-    public String detail(Model model, @PathVariable("id") Long id){
+    public String detail(Model model, RedirectAttributes redirectAttributes, @PathVariable("id") Long id){
         Specification<Barang> getSpec = BarangSpecifications.barangBesertaKategoriByidbarang(id);
         Optional<Barang> data = barangRepository.findOne(getSpec);
 
@@ -58,6 +59,7 @@ public class BarangController {
             model.addAttribute("barang", data);
             return "admin/detail-barang";
         }
+        redirectAttributes.addFlashAttribute("falseMessage", "Barang tidak ditemukan");
         return "redirect:/admin/barang";
     }
 
@@ -84,7 +86,12 @@ public class BarangController {
         }
 
         String filename;
-        filename = services.uploadImage(foto, this.directoryProducts + getKategori.get().getNama_kategori());
+        try {
+            filename = services.uploadImage(foto, this.directoryProducts + getKategori.get().getNama_kategori());
+        }catch (RuntimeException e){
+            redirectAttributes.addFlashAttribute("falseMessage", "Terjadi kesalahan pada gambar. Error : " + e);
+            return new RedirectView("/admin/barang");
+        }
 
         Barang barang = new Barang();
         barang.setId_kategori(getKategori.get());
@@ -99,12 +106,15 @@ public class BarangController {
         barang.setStatus_aktif(status_aktif);
         barang.setTerjual(0); // -> Manual
 
-        Barang savedBarang = barangRepository.save(barang);
-        if(savedBarang.getId_barang() != null){
+        try{
+            barangRepository.save(barang);
             redirectAttributes.addFlashAttribute("trueMessage", "Data Berhasil Disimpan");
+        }catch (Exception e){
+            redirectAttributes.addFlashAttribute("falseMessage", "Gagal menyimpan barang. Error : " + e);
+            return new RedirectView("/admin/barang");
         }
 
-        return new RedirectView("/admin/addbarang");
+        return new RedirectView("/admin/barang");
     }
 
     @GetMapping("/admin/updatebarang/{id}")
@@ -144,19 +154,24 @@ public class BarangController {
         }
 
         // Dapatkan nama folder & file yang akan di implementasikan pada dropbox
-        String directory = getKategori.get().getNama_kategori();
+        String newDirectory = getKategori.get().getNama_kategori();
+        String oldDirectory = getBarang.get().getId_kategori().getNama_kategori();
         String sourceFilename = getBarang.get().getGambar_url();
-        String resultFileName;
-        Barang barangToUpdate = getBarang.get();
 
-        if(getBarang.get().getId_kategori().getId_kategori() != getKategori.get().getId_kategori()){
-            services.moveImage(
-                    directoryProducts + getBarang.get().getId_kategori().getNama_kategori(),
-                    directoryProducts + directory,
-                    sourceFilename
-            );
+        if(!getBarang.get().getId_kategori().getId_kategori().equals(getKategori.get().getId_kategori())){
+            try {
+                services.moveImage(
+                        directoryProducts + oldDirectory,
+                        directoryProducts + newDirectory,
+                        sourceFilename
+                );
+            }catch (Exception e){
+                redirectAttributes.addFlashAttribute("falseMessage", "Terjadi kesalahan pada gambar. Error : " + e);
+                return new RedirectView("/admin/barang");
+            }
         }
 
+        Barang barangToUpdate = getBarang.get();
         barangToUpdate.setId_kategori(getKategori.get());
         barangToUpdate.setId_admin(1L); // -> Manual
         barangToUpdate.setNama_barang(nama_barang);
@@ -174,26 +189,92 @@ public class BarangController {
             // 1. cek apakah gambar tersedia pada dropbox
             // 2. simpan gambar ke dropbox -> jika 1 true
             // 3. hapus gambar pada dropbox -> jika 2 true
-            boolean imgExists = services.isImageExists(this.directoryProducts + directory, sourceFilename);
-            if(imgExists){
-                resultFileName = services.uploadImage(foto, this.directoryProducts + getKategori.get().getNama_kategori());
-                if (resultFileName == null){
-                    return new RedirectView("/admin/addbarang");
+            try {
+                // Cek ketersediaan pada dropbox
+                services.isImageExists(this.directoryProducts + newDirectory, sourceFilename);
+
+                String resultFileName;
+                try {
+                    resultFileName = services.uploadImage(foto, this.directoryProducts + getKategori.get().getNama_kategori());
+                }catch (RuntimeException e){
+                    redirectAttributes.addFlashAttribute("falseMessage", "Terjadi kesalahan pada gambar. Error : " + e);
+                    return new RedirectView("/admin/barang");
                 }
 
-                services.deleteImage(this.directoryProducts + directory, sourceFilename);
-                barangToUpdate.setGambar_url(resultFileName); // simpan gambar kedatabase
-                Barang updatedBarang = barangRepository.save(barangToUpdate);
+                try {
+                    services.deleteImage(this.directoryProducts + newDirectory, sourceFilename);
+                }catch (RuntimeException e){
+                    redirectAttributes.addFlashAttribute("falseMessage", "Terjadi kesalahan pada gambar. Error : " + e);
+                    return new RedirectView("/admin/barang");
+                }
+
+                try {
+                    barangToUpdate.setGambar_url(resultFileName); // simpan gambar kedatabase
+                    barangRepository.save(barangToUpdate);
+                }catch (Exception e){
+                    redirectAttributes.addFlashAttribute("falseMessage", "Gagal memperbarui barang. Error : " + e);
+                    return new RedirectView("/admin/barang");
+                }
+                // Pesan berhasil
                 redirectAttributes.addFlashAttribute("trueMessage", "Barang berhasil diperbarui");
+            }catch (RuntimeException e){
+                redirectAttributes.addFlashAttribute("falseMessage", "Terjadi kesalahan pada gambar. Error : " + e);
+                return new RedirectView("/admin/barang");
             }
         }else{
             // Jika tidak ada foto yang diupload maka
             // 1. simpan kembali foto yang lama ke database
-            barangToUpdate.setGambar_url(sourceFilename); // simpan gambar kedatabase
-            Barang updatedBarang = barangRepository.save(barangToUpdate);
+
+            try {
+                barangToUpdate.setGambar_url(sourceFilename); // simpan gambar kedatabase
+                barangRepository.save(barangToUpdate);
+            }catch (Exception e){
+                redirectAttributes.addFlashAttribute("falseMessage", "Gagal memperbarui barang. Error : " + e);
+                return new RedirectView("/admin/barang");
+            }
+            // Pesan berhasil
             redirectAttributes.addFlashAttribute("trueMessage", "Barang berhasil diperbarui");
         }
-
         return new RedirectView("/admin/barang");
+    }
+
+    @GetMapping("/admin/deletebarang/{id}")
+    public RedirectView deleteBarang(RedirectAttributes redirectAttributes, @PathVariable("id") Long id){
+        // Cek apakah detail barang tersedia di database
+        Specification<Barang> getBarangById = BarangSpecifications.barangBesertaKategoriByidbarang(id);
+        Optional<Barang> getBarang = barangRepository.findOne(getBarangById);
+
+        if(getBarang.isEmpty()){
+            redirectAttributes.addFlashAttribute("falseMessage", "Barang tidak ditemukan");
+            return new RedirectView("/admin/barang");
+        }
+
+        // Dapatkan nama folder & file yang akan di implementasikan pada dropbox
+        String directory = getBarang.get().getId_kategori().getNama_kategori();
+        String sourceFilename = getBarang.get().getGambar_url();
+
+        try {
+            // Cek ketersediaan pada dropbox
+            services.isImageExists(this.directoryProducts + directory, sourceFilename);
+
+            try {
+                services.deleteImage(this.directoryProducts + directory, sourceFilename);
+            }catch (RuntimeException e){
+                redirectAttributes.addFlashAttribute("falseMessage", "Terjadi kesalahan pada gambar. Error : " + e);
+                return new RedirectView("/admin/barang");
+            }
+
+            try {
+                barangRepository.delete(getBarang.get());
+                redirectAttributes.addFlashAttribute("trueMessage", "Barang berhasil dihapus");
+            } catch (Exception e) {
+                redirectAttributes.addFlashAttribute("falseMessage", "Gagal menghapus barang. Error : " + e);
+            }
+            return new RedirectView("/admin/barang");
+        }catch (RuntimeException e){
+            redirectAttributes.addFlashAttribute("falseMessage", "Terjadi kesalahan pada gambar. Error : " + e);
+            return new RedirectView("/admin/barang");
+        }
+
     }
 }
